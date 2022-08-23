@@ -1,0 +1,125 @@
+I"¹2<h2 id="getting-started">Getting Started</h2>
+<ul>
+  <li><a href="https://jekyllrb.com/docs/installation/" target="_blank">Install Jekyll</a> <i class="fa fa-external-link" aria-hidden="true"></i></li>
+  <li>Fork/Clone/Download <a href="https://github.com/ritijjain/pudhina-fresh.git" target="_blank">Pudhina Fresh</a> <i class="fa fa-external-link" aria-hidden="true"></i></li>
+  <li>Configure <code class="highlighter-rouge">_config.yml</code></li>
+  <li>Add posts in <code class="highlighter-rouge">_posts</code>, add projects in <code class="highlighter-rouge">_data/projects.yml</code> and, customize the main page <code class="highlighter-rouge">index.html</code></li>
+  <li>Run <code class="highlighter-rouge">bundle exec jekyll serve</code> to test out the site at <a href="http://localhost:4000/" target="_blank">localhost:4000</a> <i class="fa fa-external-link" aria-hidden="true"></i></li>
+</ul>
+
+<h2 id="settings-in-_configyml">Settings in _config.yml</h2>
+<p>This is the file where configurations affecting the whole site live.</p>
+
+<p><code class="highlighter-rouge">_config.yml</code></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">title</span><span class="pi">:</span> <span class="s">Pudhina Fresh</span> <span class="c1"># Shown in header on pages with full_logo: true</span>
+<span class="na">short_logo</span><span class="pi">:</span> <span class="s">P.</span> <span class="c1"># Shown in header on all pages by default unless full_logo: true is set</span>
+<span class="na">description</span><span class="pi">:</span> <span class="pi">&gt;</span> <span class="c1"># The description for your site</span>
+  <span class="s">A minimal yet feature-rich Jekyll theme made for personal websites and blogs.</span>
+<span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://ritijjain.github.io/pudhina-fresh"</span> <span class="c1"># The base hostname &amp; protocol for your site</span>
+
+<span class="na">author</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">Ritij Jain</span>
+  <span class="na">github</span><span class="pi">:</span> <span class="s">ritijjain/pudhina-fresh</span> <span class="c1"># GitHub username, used for GitHub icon on the top right</span>
+  <span class="na">linkedin</span><span class="pi">:</span> <span class="s">ritijjain</span> <span class="c1"># Your LinkedIn profile url name, used for LinkedIn icon on the top right</span>
+  <span class="na">email</span><span class="pi">:</span> <span class="s">example@example.com</span> <span class="c1"># Used for email icon on the top right</span>
+  <span class="na">homepage</span><span class="pi">:</span> <span class="s">https://ritijjain.com</span> <span class="c1"># This links to your name in post meta</span>
+  <span class="na">twitter</span><span class="pi">:</span> <span class="c1"># Twitter username, used for Twitter Card Analytics</span>
+
+<span class="na">disqus_name</span><span class="pi">:</span> <span class="c1"># Setting this will turn on Disqus comments</span>
+<span class="na">g_track_id</span><span class="pi">:</span> <span class="c1"># Google Analytics tracking ID (e.g. UA-000000-2), setting this will turn on Google Analytics</span>
+<span class="na">rss</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># RSS feed icon on or off</span>
+<span class="na">dark_mode</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># Dark mode icon</span>
+<span class="na">project_card_style</span><span class="pi">:</span> <span class="s">modal</span> <span class="c1"># Choose from masonry, modal, and flat</span>
+</code></pre></div></div>
+
+<h2 id="posts">Posts</h2>
+<ul>
+  <li>Create posts under <code class="highlighter-rouge">_posts/</code></li>
+  <li>Posts should include front matter in this format:</li>
+</ul>
+
+<p><code class="highlighter-rouge">_posts/&lt;YYYY-MM-DD-short-title.md&gt;</code></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Required front matter</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span> <span class="c1"># Posts should use the post layout</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Content Styles</span> <span class="c1"># Post title</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2021-02-04</span> <span class="c1"># Publish date in YYYY-MM-DD format</span>
+
+<span class="c1"># Recommended front matter</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">tag2</span><span class="pi">,</span> <span class="nv">tag4</span><span class="pi">]</span> <span class="c1"># A list of tags</span>
+<span class="na">splash_img_source</span><span class="pi">:</span> <span class="s">/assets/img/photo-1556075798-4825dfaaf498.jpeg</span> <span class="c1"># Splash image source, high resolution images with an aspect ratio close to 4:3 recommended</span>
+<span class="na">splash_img_caption</span><span class="pi">:</span> <span class="s">A sample splash image with a sample caption. Image by &lt;a href="https://unsplash.com/@yancymin"&gt;Yancy Min&lt;/a&gt; on Unsplash.</span> <span class="c1"># Splash image caption</span>
+
+<span class="c1"># Optional front matter</span>
+<span class="na">updated</span><span class="pi">:</span> <span class="s">2021-02-05</span> <span class="c1"># Updated date in YYYY-MM-DD format</span>
+<span class="na">author</span><span class="pi">:</span> 
+  <span class="na">name</span><span class="pi">:</span> <span class="s">Some Guest Author</span> <span class="c1"># Author name, if not provided defaults to site.author.name</span>
+  <span class="na">homepage</span><span class="pi">:</span> <span class="s">http://example.com</span> <span class="c1"># Author link, if not provided defaults to site.author.homepage</span>
+<span class="na">pin</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># true if this post must be pinned on top of the page, default is false.</span>
+<span class="na">listed</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># false if this post must NOT be included on the posts page, sitemap, and any of the tag pages, default is true</span>
+<span class="na">index</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># When false, &lt;meta name="robots" content="noindex"&gt; is added to the page, default is true</span>
+</code></pre></div></div>
+
+<h2 id="projects">Projects</h2>
+<ul>
+  <li>Projects are generated using data stored in <code class="highlighter-rouge">_data/projects.yml</code>.</li>
+  <li>This file contains a list of projects, each of which has key value pairs describing the project in this format:</li>
+</ul>
+
+<p><code class="highlighter-rouge">_data/projects.yml</code></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Project One</span> <span class="c1"># Project name, also used as heading</span>
+  <span class="na">id</span><span class="pi">:</span> <span class="s">p1</span> <span class="c1"># Project id, must be unique amongst the projects</span>
+  <span class="na">img_src</span><span class="pi">:</span> <span class="s">/assets/img/connectpie-page.png</span> <span class="c1"># Optional image</span>
+  <span class="na">description_less</span><span class="pi">:</span> <span class="pi">&gt;</span> <span class="c1"># Description shown at all times</span>
+    <span class="s">&lt;p&gt;This part of the project description is visible at all times.&lt;/p&gt; </span>
+  <span class="na">description_more</span><span class="pi">:</span> <span class="pi">&gt;</span> <span class="c1"># Description shown only when the project card is expanded</span>
+    <span class="s">&lt;p&gt;This part is only seen when you click on the project card.&lt;/p&gt; </span>
+
+    <span class="s">&lt;a href="#" target="_blank" class="btn btn-dark mb-1"&gt;&lt;i class="fas fa-code-branch"&gt;&lt;/i&gt; &amp;nbsp Repository&lt;/a&gt;</span>
+    <span class="s">&lt;a href="#" target="_blank" class="btn btn-dark mb-1"&gt;&lt;i class="fas fa-align-right"&gt;&lt;/i&gt; &amp;nbsp Blog Post&lt;/a&gt;</span>
+
+  <span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">tag1</span><span class="pi">,</span> <span class="nv">tag2</span><span class="pi">]</span> <span class="c1"># A list of tags</span>
+</code></pre></div></div>
+
+<h2 id="tags-and-tag-pages">Tags and Tag Pages</h2>
+<ul>
+  <li>Tags can be added to both posts and projects as a list of tag names</li>
+  <li>Tags always link to their corresponding tag page <code class="highlighter-rouge">/tags/&lt;tag name&gt;</code>.</li>
+  <li>Tag pages must be manually created under <code class="highlighter-rouge">pages/tags</code>. Each tag page should include front matter in this format:</li>
+</ul>
+
+<p><code class="highlighter-rouge">pages/tags/&lt;tag name&gt;</code></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Tag:</span><span class="nv"> </span><span class="s">tag1"</span> <span class="c1"># This is the page title, could be anything of your choosing</span>
+<span class="na">subtitle</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Posts</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">projects</span><span class="nv"> </span><span class="s">filtered</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">tag:</span><span class="nv"> </span><span class="s">tag1."</span> <span class="c1"># This is the page subtitle, could be anything of your choosing</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/tags/tag1</span> <span class="c1"># This is the page permalink, this should be exactly in this format: /tags/&lt;tag name&gt;</span>
+<span class="na">tag</span><span class="pi">:</span> <span class="s">tag1</span> <span class="c1"># Tag name should be consistent across tag page, posts, and projects</span>
+<span class="na">tag_style</span><span class="pi">:</span> <span class="s">rgba( 144, 106, 207, 100%)</span> <span class="c1"># Tag background color, recommended to use RGBA value</span>
+</code></pre></div></div>
+
+<h2 id="redirect-pages">Redirect Pages</h2>
+<ul>
+  <li>Redirect pages can bre created under <code class="highlighter-rouge">_pages/redirects</code>.</li>
+  <li>They should include front matter in this format:</li>
+</ul>
+
+<p><code class="highlighter-rouge">pages/redirects/&lt;name&gt;.md</code></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">permalink</span><span class="pi">:</span> <span class="s">/roll</span> <span class="c1"># redirect origin link</span>
+<span class="na">redirect_link</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://www.youtube.com/watch?v=dQw4w9WgXcQ"</span> <span class="c1"># redirect destination link</span>
+</code></pre></div></div>
+
+<h2 id="footer">Footer</h2>
+<p>Change the content on the footer in <code class="highlighter-rouge">_includes/page/about.html</code>.</p>
+
+<h2 id="markdown-components">Markdown Components</h2>
+<p>Refer to <a href="https://www.markdownguide.org/basic-syntax/" target="_blank">markdown guide basic syntax</a> <i class="fa fa-external-link" aria-hidden="true"></i> to learn how to render elements using markdown. It is also possible to directly include HTML components in markdown files.</p>
+
+<h2 id="deployment">Deployment</h2>
+<p>Jekyll sites are just like any other static websites.</p>
+
+<p><a href="https://pages.github.com/" target="_blank">GitHub Pages</a> <i class="fa fa-external-link" aria-hidden="true"></i> and <a href="https://www.netlify.com/" target="_blank">Netlify</a> <i class="fa fa-external-link" aria-hidden="true"></i> are popular options. Both have a free tier of service.</p>
+
+<h2 id="development">Development</h2>
+<p>Current development status is active. If resources allow, fixes will be made as soon as they are found and features will be added as soon as they are deemed fit. Feel free to contribute to Pudhian Fresh by opening a pull request on <a href="https://github.com/ritijjain/pudhina-fresh">GitHub</a>.</p>
+
+<h2 id="questions-and-comments">Questions and Comments</h2>
+<p>Feel free to open a new issue on <a href="https://github.com/ritijjain/pudhina-fresh/issues" target="_blank">GitHub</a> <i class="fa fa-external-link" aria-hidden="true"></i> for questions and comments regarding Pudhina Fresh theme.</p>
+:ET
