@@ -254,9 +254,9 @@ a.logo:hover {
 }
 
 .writer-profile {
+  margin: auto;
   width: 100px;
   height: 100px;
-  margin: auto;
 }
 
 /* =Small screen */ /*************************************************************/
