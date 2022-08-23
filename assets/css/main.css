@@ -256,6 +256,7 @@ a.logo:hover {
 .writer-profile {
   width: 100px;
   height: 100px;
+  margin: auto;
 }
 
 /* =Small screen */ /*************************************************************/
