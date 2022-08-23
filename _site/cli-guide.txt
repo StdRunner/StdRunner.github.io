@@ -1,2 +1,0 @@
-## Run Jekyll Local Server
-bundle exec jekyll serve 
