@@ -2,7 +2,7 @@ title: Std Runner # Shown in header on pages with full_logo: true
 short_logo: SR. # Shown in header on all pages by default unless full_logo: true is set
 description: > # The description for your site
   Blog for technological development with complete self-will
-url: "https://stdrunner.github.io" # Site base URL
+url: "https://stdrunner.github.io/pudhina-fresh" # Site base URL
 
 author:
   name: Std Runner
@@ -49,5 +49,5 @@ compress_html:
   startings: [html, head, body]
 
 rss: false # RSS feed icon on or off
-dark_mode: true # Dark mode icon
+dark_mode: false # Dark mode icon
 project_card_style: modal # Choose from masonry, modal, and flat
