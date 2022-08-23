@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "Steady Runner's Github Pages"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Steady Runner"
+name                     : Steady Runner
 description              : "An amazing website."
 url                      : "https://stdrunner.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
