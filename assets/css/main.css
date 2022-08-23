@@ -247,6 +247,18 @@ a.logo:hover {
   font-size: 130%;
 }
 
+.describe-text-not-italic {
+  color: #565656;
+  font-weight: 700;
+  font-size: 130%;
+}
+
+.writer-profile {
+  margin: auto;
+  width: 100px;
+  height: 100px;
+}
+
 /* =Small screen */ /*************************************************************/
 @media (max-width: 600px) {
   p,
