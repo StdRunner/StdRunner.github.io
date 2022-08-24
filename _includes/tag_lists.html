@@ -1,0 +1,11 @@
+{% for tag in tags %}
+<div class="card mb-4">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 style="padding-top: 0;"><b><a class="stretched-link" href="{{ site.url }}{{ post.url }}">{{ tag }}</a></b></h4>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

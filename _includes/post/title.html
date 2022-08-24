@@ -4,4 +4,5 @@
 <h1 class="post-title">
     <div class="post-title__text">{{ page.title }}</div>
 </h1>
-<p class="post-title__subtitle">Published {{ page.date | date: "%b %e, 20%y" }} {% if page.updated %} (Updated {{ page.updated | date: "%b %e, 20%y" }}) {% endif %} by {% if page.author.name %}<a href="{{ page.author.homepage }}" target="_blank">{{ page.author.name }}</a>{% else %}<a href="{{ site.author.homepage }}" target="_blank">{{ site.author.name }}</a>{% endif %}{% if page.pin %} • Pinned ⭐{% endif %}</p>
+<!--<p class="post-title__subtitle">{{ page.date | date: "%b %e, 20%y" }} {% if page.updated %} (Updated {{ page.updated | date: "%b %e, 20%y" }}) {% endif %} by {% if page.author.name %}<a href="{{ page.author.homepage }}" target="_blank">{{ page.author.name }}</a>{% else %}<a href="{{ site.author.homepage }}" target="_blank">{{ site.author.name }}</a>{% endif %}{% if page.pin %} • Pinned ⭐{% endif %}</p>-->
+<p class="post-title__subtitle">{{ page.date | date: "%Y-%m-%d" }} {% if page.updated %} (Updated {{ page.updated | date: "%Y-%m-%d" }}) {% endif %} by {% if page.author.name %}<a href="{{ page.author.homepage }}" target="_blank">{{ page.author.name }}</a>{% else %}<a href="{{ site.author.homepage }}" target="_blank">{{ site.author.name }}</a>{% endif %}{% if page.pin %} • Pinned ⭐{% endif %}</p>
