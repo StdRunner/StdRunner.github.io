@@ -7,6 +7,9 @@ permalink: /tags/
 sitemap:
   priority: 0.9
 ---
-{% assign tags = site.data.tags %}
+{% assign tags = site.data.tags.real-rags %}
+{% include tag_lists.html %}
 
+<h5>SAMPLE TAG</h5>
+{% assign tags = site.data.tags.sample-tags %}
 {% include tag_lists.html %}

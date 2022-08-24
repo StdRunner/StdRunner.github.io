@@ -1,3 +1,7 @@
+real-rags:
+- name : js
+  color : grey
+sample-tags:
 - name : docs
   color : rgba( 140, 160, 175, 100%)
 - name : jekyll
