@@ -1,0 +1,3 @@
+{% for menu in menus %}
+    <div class="menu_item" onclick="location.href='{{site.url}}/posts/{{menu.menuname}}'">{{ menu.title }}</div>
+{% endfor %}

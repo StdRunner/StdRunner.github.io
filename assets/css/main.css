@@ -134,7 +134,7 @@ a.logo:hover {
 
 .page-title__text {
   font-weight: 700;
-  font-size: 120%;
+  font-size: 80%;
 }
 
 .page-title__subtitle {
@@ -290,18 +290,10 @@ a.logo:hover {
     margin-top: 10px;
     margin-bottom: 30px;
   }
-}
 
-.tag-card {
-  display: inline-block;
-  width: fit-content;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.tag-link {
-  color: white;
+  .posts_pannel {
+    display: block !important;
+  }
 }
 
 .card .btn {
@@ -325,6 +317,38 @@ a.logo:hover {
 
 .caption {
   text-align: center;
+}
+
+/* tag css */
+.tag-card {
+  display: inline-block;
+  width: fit-content;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.tag-link {
+  color: white;
+}
+
+/* posts menu css */
+.posts_pannel {
+  display: flex;
+}
+
+.posts_menu {
+  width: fit-content;
+  padding: 0 20px 20px 0;
+  min-width: 200px;
+}
+
+.menu_item {
+  color: gray;
+  cursor: pointer;
+}
+.menu_item:hover {
+  color: darkgray;
 }
 
 .post-card-image {
