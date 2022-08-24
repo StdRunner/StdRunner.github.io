@@ -13,7 +13,7 @@ sitemap:
     <img class="writer-profile" src="assets/img/runner.png"/>
     <div>
         <p><br />
-            안녕하세요 <b>Std Runner</b> 입니다</p>
+            안녕하세요 <b>Steady Runner</b> 입니다</p>
         <p>2022년 8월 스스로에게 변화와 배움이 필요하다고 느꼈습니다</p>
         <p>일하는 즐거움과 성장할 동력을 얻고자 함이었고, 이 블로그는 이를 잊지 않기 위한 기록입니다</p>
     </div>

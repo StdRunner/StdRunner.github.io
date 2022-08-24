@@ -1,11 +1,11 @@
-title: Std Runner # Shown in header on pages with full_logo: true
+title: Steady Runner # Shown in header on pages with full_logo: true
 short_logo: SR. # Shown in header on all pages by default unless full_logo: true is set
 description: > # The description for your site
   Blog for technological development with complete self-will
 url: "https://stdrunner.github.io" # Site base URL
 
 author:
-  name: Std Runner
+  name: Steady Runner
   github: StdRunner # GitHub username, used for GitHub icon on the top right
   linkedin: # Your LinkedIn profile url name, used for LinkedIn icon on the top right
   email: kjb119912@gmail.com # Used for email icon on the top right
