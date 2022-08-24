@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  샘플 포스트
+title: ------ 아래로 모두 샘플 포스트 ------
 date:   2022-08-24
 updated: 
 tags: docs

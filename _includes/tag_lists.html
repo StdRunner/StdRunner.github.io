@@ -1,11 +1,9 @@
 {% for tag in tags %}
-<div class="card mb-4">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-sm-12">
-                <h4 style="padding-top: 0;"><b><a class="stretched-link" href="{{ site.url }}/tags/{{ tag }}">{{ tag }}</a></b></h4>
-            </div>
-        </div>
-    </div>
+<div class="card mb-4 mr-4 tag-card" onClick="location.href='{{ site.url }}/tags/{{ tag.name }}'" style="background-color: {{ tag.color }};">
+    <h4 style="padding-top: 0;">
+        <b>
+            <div class="tag-link" >#{{ tag.name }}</div></b>
+        </b>
+    </h4>
 </div>
 {% endfor %}

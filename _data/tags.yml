@@ -1,8 +1,16 @@
-- docs
-- jekyll
-- open-source
-- tag1
-- tag2
-- tag3
-- tag4
-- tag5
+- name : docs
+  color : rgba( 140, 160, 175, 100%)
+- name : jekyll
+  color : rgba( 199, 30, 36, 100%)
+- name : open-source
+  color : rgba( 63, 166, 82, 100%)
+- name : tag1
+  color : rgba( 144, 106, 207, 100%)
+- name : tag2
+  color : rgba( 77, 194, 116, 100%)
+- name : tag3
+  color : rgba( 245, 123, 6, 100%)
+- name : tag4
+  color : rgba( 247, 118, 205, 100%)
+- name : tag5
+  color : rgba( 0, 132, 247, 100%)

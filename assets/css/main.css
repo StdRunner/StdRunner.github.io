@@ -292,6 +292,18 @@ a.logo:hover {
   }
 }
 
+.tag-card {
+  display: inline-block;
+  width: fit-content;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.tag-link {
+  color: white;
+}
+
 .card .btn {
   position: relative;
   z-index: 2;
