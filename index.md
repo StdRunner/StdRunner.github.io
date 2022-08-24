@@ -8,7 +8,7 @@ sitemap:
   priority: 1.0
 ---
 <p class="describe-text">Blog for technological development with complete self-will</p>
-<p class="describe-text-not-italic">이 블로그는 온전한 저의 의지로 기술적 성장을 위해 시작됐습니다.</p>
+<p class="describe-text-not-italic">온전한 스스로의 의지로 기술적 성장을 위한 블로그</p>
 <div style="display: inline-flex;">
     <img class="writer-profile" src="assets/img/runner.png"/>
     <div>
