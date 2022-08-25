@@ -339,8 +339,8 @@ a.logo:hover {
 
 .posts_menu {
   width: fit-content;
-  padding: 0 20px 20px 0;
-  min-width: 200px;
+  padding: 0 40px 20px 0;
+  min-width: 250px;
 }
 
 .menu_item {
@@ -349,6 +349,11 @@ a.logo:hover {
 }
 .menu_item:hover {
   color: darkgray;
+}
+.menu_item_selected {
+  color: #565656;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .post-card-image {

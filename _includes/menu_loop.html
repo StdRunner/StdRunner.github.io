@@ -1,3 +1,7 @@
 {% for menu in menus %}
-    <div class="menu_item" onclick="location.href='{{site.url}}/posts/{{menu.menuname}}'">{{ menu.title }}</div>
+    {% if menu.menuname == page.menu %}
+        <div class="menu_item_selected" onclick="location.href='{{site.url}}/posts/{{menu.menuname}}'">{{ menu.title }}</div>
+    {% else %}
+        <div class="menu_item" onclick="location.href='{{site.url}}/posts/{{menu.menuname}}'">{{ menu.title }}</div>
+    {% endif %}
 {% endfor %}

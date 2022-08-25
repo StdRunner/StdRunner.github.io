@@ -5,4 +5,8 @@
     <div class="post-title__text">{{ page.title }}</div>
 </h3>
 <!--<p class="post-title__subtitle">{{ page.date | date: "%b %e, 20%y" }} {% if page.updated %} (Updated {{ page.updated | date: "%b %e, 20%y" }}) {% endif %} by {% if page.author.name %}<a href="{{ page.author.homepage }}" target="_blank">{{ page.author.name }}</a>{% else %}<a href="{{ site.author.homepage }}" target="_blank">{{ site.author.name }}</a>{% endif %}{% if page.pin %} • Pinned ⭐{% endif %}</p>-->
-<p class="post-title__subtitle">{{ page.date | date: "%Y-%m-%d" }} {% if page.updated %} (Updated {{ page.updated | date: "%Y-%m-%d" }}) {% endif %} by {% if page.author.name %}<a href="{{ page.author.homepage }}" target="_blank">{{ page.author.name }}</a>{% else %}<a href="{{ site.author.homepage }}" target="_blank">{{ site.author.name }}</a>{% endif %}{% if page.pin %} • Pinned ⭐{% endif %}</p>
+<p class="post-title__subtitle">{{ page.date | date: "%b %e, 20%y" }} {% if page.updated %} (Updated {{ page.updated | date: "%Y-%m-%d" }}) {% endif %}{% if page.pin %} • Pinned ⭐{% endif %}
+    <a class="social-links__entry">
+    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url={{site.url}}{{page.url}}&count_bg=%235577AA&title_bg=%235577AA&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+    </a>
+</p>

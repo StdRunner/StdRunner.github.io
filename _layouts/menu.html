@@ -2,14 +2,19 @@
 layout: page
 ---
 {% assign posts = site.posts %}
-{% assign menus = site.data.menus %}
 <div class="posts_pannel">
   <div class="posts_menu">
+    <hr>
+    {% assign menus = site.data.menus.real-menus %}
     {% include menu_loop.html %}
+    <hr>
+    {% assign menus = site.data.menus.sample-menus %}
+    {% include menu_loop.html %}
+    <hr>
   </div>
   <div class="posts_list">
     {% assign posts = site.posts | where: 'menu', page.menu %}
-    <h4>{{ page.menuname }}</h4>
+    
     {% if posts[0] %}
         {% include post/post_loop.html %}
     {% else %}

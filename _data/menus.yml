@@ -1,3 +1,7 @@
+real-menus:
+- title : 임시 메뉴
+  menuname : tempmenu
+sample-menus:
 - title : 샘플 포스트
   menuname : samplepost
 - title : 테스트 메뉴
