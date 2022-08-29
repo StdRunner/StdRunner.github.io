@@ -343,6 +343,10 @@ a.logo:hover {
   min-width: 250px;
 }
 
+.posts_list {
+  width: 100%;
+}
+
 .menu_item {
   color: gray;
   cursor: pointer;

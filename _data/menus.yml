@@ -1,6 +1,6 @@
 real-menus:
-- title : 임시 메뉴
-  menuname : tempmenu
+- title : 지킬(Jekyll) 블로그
+  menuname : jekyllblog
 sample-menus:
 - title : 샘플 포스트
   menuname : samplepost
