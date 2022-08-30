@@ -97,3 +97,13 @@ VS Code를 실행 후 ***폴더 선택***을 클릭하여 작업할 폴더를 �
 사전에 Jekyll 테마를 git clone 했던 ***C:\JekyllTheme\{Repository 이름}*** 경로를 선택한다.
 <img src="\assets\img\posts\how-to-custom-jekyll\vs_code.png" style="border: 1px solid gray;" /><br>
 <img src="\assets\img\posts\how-to-custom-jekyll\vs_code2.png" style="border: 1px solid gray;" /><br>
+* * *
+
+### 포스팅을 마치며
+여기까지 Jekyll 테마 커스텀 환경 구성이 완료되었다.   
+
+나는 Jekyll 테마 커스텀을 무작정 시작하다보니 UI변경, 기능 보완/추가 작업을 진행하는데 생각보다 삽질을 많이 했다.   
+만약 시간 투자와 삽질할 여건이 되지 않는 사람은 티스토리, 네이버 등 기존 블로그 플랫폼을 이용하는 것도 하나의 방법이다.   
+
+직접 Jekyll 테마를 수정할 사람이라면 HTML&CSS, js는 당연하고   
+***Jekyll 테마 동작 방식, 폴더 구조, liquid, 마크다운***에 대한 이해를 선행하기 바란다.   
