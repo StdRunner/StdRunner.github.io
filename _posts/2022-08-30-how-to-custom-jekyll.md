@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Jekyll 테마 커스텀 환경 구성(Ruby Installer, )
+title: Jekyll 테마 커스텀 환경 구성(Ruby Installer, VS Code)
 date: 2022-08-30
 updated: 
 tags: [jekyll-blog, vscode]
