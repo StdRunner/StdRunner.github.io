@@ -1,6 +1,8 @@
 real-tags:
 - name : jekyll-blog
   color : burlywood
+- name : vscode
+  color : cornflowerblue
 sample-tags:
 - name : docs
   color : rgba( 140, 160, 175, 100%)
