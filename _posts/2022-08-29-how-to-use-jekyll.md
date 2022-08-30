@@ -74,7 +74,7 @@ Github 페이지에서 이전에 생성해둔 Repository로 이동한다.
 <img src="\assets\img\posts\how-to-use-jekyll\my_repo.png" style="border: 1px solid gray;" /><br>
 
 테마 소스를 Repository로 업로드하기 위해 ***Upload files*** 를 클릭한다.   
-사전에 업로드 해둔 테마 파일 목록이 출력됩니다.   
+사전에 업로드 해둔 테마 파일 목록이 출력된다.   
 <img src="\assets\img\posts\how-to-use-jekyll\my_repo2.png" style="border: 1px solid gray;" /><br>
 
 이전에 압축 해제해둔 테마 파일 전체를 Github으로 드래그 앤 드랍한다.   
