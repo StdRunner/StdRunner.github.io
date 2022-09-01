@@ -120,6 +120,9 @@ Github Pages 배포하는 과정을 알아보자.
 메시지 없이 커밋할 수 없으며, 메시지 입력 후 해당 페이지를 닫으면 커밋이 완료되고,   
 메시지 입력 없이 페이지를 닫으면 커밋이 진행되지 않는다.
 <img src="\assets\img\posts\how-to-custom-jekyll\commit_msg.png" style="border: 1px solid gray; width: 80%" /><br>
+
+로컬 Repository에 commit을 완료했으면 Github Repository(원격 저장소)로 push해야 비로소 소스 수정이 완료된다.
+<img src="\assets\img\posts\how-to-custom-jekyll\push_origin.png" style="border: 1px solid gray; width: 50%" /><br>
 * * *
 
 ### 포스팅을 마치며
