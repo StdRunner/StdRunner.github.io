@@ -99,16 +99,24 @@ VS Code를 실행 후 ***폴더 선택***을 클릭하여 작업할 폴더를 �
 <img src="\assets\img\posts\how-to-custom-jekyll\vs_code2.png" style="border: 1px solid gray;" /><br>
 * * *
 
-## 테마 소스 변경점 배포
+## 변경점 Github commit, 배포
 소스 편집기로 VS Code를 사용한다고 가정하고 소스 변경점을 Github Repository에 push 하고   
 Github Pages 배포하는 과정을 알아보자.
+
+변경된 파일들은 로컬 Repository 내에만 존재하고 있으므로 Github Repository에 commit&push할 것이다.   
+변경된 소스가 ***로컬 Repository에서 Github Repository(원격 레파지토리)로 push***되면 Github Pages가 자동으로   
+변경된 페이지를 배포할 것이다.
 
 소스 clone 이후 VS Code로 테마 소스를 변경했다면, 좌측 ***소스 제어*** 탭에 변경파일이 표시된다.
 <img src="\assets\img\posts\how-to-custom-jekyll\src_ctrl.png" style="border: 1px solid gray;" /><br>
 
-변경된 파일들은 로컬 Repository 내에만 존재하고 있으므로 Github Repository에 commit, push할 것이다.   
-변경된 소스가 ***로컬 Repository에서 Github Repository(원격 레파지토리)로 push***되면 Github Pages가 자동으로   
-변경된 페이지를 배포할 것이다.
+로컬 Repository에 변경사항을 저장하기 위해 커밋 버튼을 클릭하면 아래 팝업이 출력된다.   
+커밋 전 변경 사항을 저장하는 스테이징 영역에 아무것도 없으니 변경사항을 스테이징 후 커밋하겠냐는 의미이다.   
+예를 클릭하면 커밋된다.   
+<img src="\assets\img\posts\how-to-custom-jekyll\commit_btn.png" style="border: 1px solid gray; width: 50%" /><br>
+<img src="\assets\img\posts\how-to-custom-jekyll\commit_alert.png" style="border: 1px solid gray; width: 40%" /><br>
+
+
 * * *
 
 ### 포스팅을 마치며
