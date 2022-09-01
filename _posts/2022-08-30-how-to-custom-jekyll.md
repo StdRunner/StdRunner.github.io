@@ -116,7 +116,10 @@ Github Pages 배포하는 과정을 알아보자.
 <img src="\assets\img\posts\how-to-custom-jekyll\commit_btn.png" style="border: 1px solid gray; width: 50%" /><br>
 <img src="\assets\img\posts\how-to-custom-jekyll\commit_alert.png" style="border: 1px solid gray; width: 40%" /><br>
 
-
+예를 누르면 ***커밋 메시지를 입력하는 페이지***가 나타난다.   
+메시지 없이 커밋할 수 없으며, 메시지 입력 후 해당 페이지를 닫으면 커밋이 완료되고,   
+메시지 입력 없이 페이지를 닫으면 커밋이 진행되지 않는다.
+<img src="\assets\img\posts\how-to-custom-jekyll\commit_msg.png" style="border: 1px solid gray; width: 80%" /><br>
 * * *
 
 ### 포스팅을 마치며
