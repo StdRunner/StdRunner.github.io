@@ -26,6 +26,7 @@ DBMS를 사용하지 않아 빠르고, 가볍다.
 HTML&CSS, liquid, 마크다운 사용방식을 알고 있어야 한다.
 <img src="/assets/img/posts/how-to-use-jekyll/jekyll.png" style="width:20%;" /><br>
 * * *
+
 ## 이 포스트에서 설명할 내용
 * Github 레파지토리 생성
 * 개인 블로그에 사용할 Jekyll 테마 선택과 Github 업로드

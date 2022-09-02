@@ -1,4 +1,6 @@
 real-tags:
+- name : next-js
+  color : black
 - name : jekyll-blog
   color : burlywood
 - name : vscode
