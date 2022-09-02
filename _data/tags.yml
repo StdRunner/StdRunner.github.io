@@ -2,7 +2,7 @@ real-tags:
 - name : next-js
   color : black
 - name : jekyll-blog
-  color : burlywood
+  color : rgba( 199, 30, 36, 100%)
 - name : vscode
   color : cornflowerblue
 sample-tags:

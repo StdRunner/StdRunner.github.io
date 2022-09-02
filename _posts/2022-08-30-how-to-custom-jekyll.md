@@ -99,6 +99,41 @@ VS Code를 실행 후 ***폴더 선택***을 클릭하여 작업할 폴더를 �
 <img src="\assets\img\posts\how-to-custom-jekyll\vs_code2.png" style="border: 1px solid gray;" /><br>
 * * *
 
+## 변경점 Github commit, 배포
+소스 편집기로 VS Code를 사용한다고 가정하고 소스 변경점을 Github Repository에 push 하고   
+Github Pages 배포하는 과정을 알아보자.
+
+변경된 파일들은 로컬 Repository 내에만 존재하고 있으므로 Github Repository에 commit&push할 것이다.   
+변경된 소스가 ***로컬 Repository에서 Github Repository(원격 레파지토리)로 push***되면 Github Pages가 자동으로   
+변경된 페이지를 배포할 것이다.
+
+소스 clone 이후 VS Code로 테마 소스를 변경했다면, 좌측 ***소스 제어*** 탭에 변경파일이 표시된다.
+<img src="\assets\img\posts\how-to-custom-jekyll\src_ctrl.png" style="border: 1px solid gray;" /><br>
+
+로컬 Repository에 변경사항을 저장하기 위해 커밋 버튼을 클릭하면 아래 팝업이 출력된다.   
+커밋 전 변경 사항을 저장하는 스테이징 영역에 아무것도 없으니 변경사항을 스테이징 후 커밋하겠냐는 의미이다.   
+예를 클릭하면 커밋된다.   
+<img src="\assets\img\posts\how-to-custom-jekyll\commit_btn.png" style="border: 1px solid gray; width: 50%" /><br>
+<img src="\assets\img\posts\how-to-custom-jekyll\commit_alert.png" style="border: 1px solid gray; width: 40%" /><br>
+
+예를 누르면 ***커밋 메시지를 입력하는 페이지***가 나타난다.   
+메시지 없이 커밋할 수 없으며, 메시지 입력 후 해당 페이지를 닫으면 커밋이 완료되고,   
+메시지 입력 없이 페이지를 닫으면 커밋이 진행되지 않는다.
+<img src="\assets\img\posts\how-to-custom-jekyll\commit_msg.png" style="border: 1px solid gray; width: 80%" /><br>
+
+로컬 Repository에 commit을 완료했으면 Github Repository(원격 저장소)로 push해야 비로소 소스 수정이 완료된다.
+<img src="\assets\img\posts\how-to-custom-jekyll\push_origin.png" style="border: 1px solid gray; width: 50%" /><br>
+
+수정 사항을 Github에 push하고, Github Repository로 이동하여 Actions를 클릭하면   
+조금 전 push로 인한 Github Pages 배포 작업 상태를 확인할 수 있다.
+<img src="\assets\img\posts\how-to-custom-jekyll\deploy_status.png" style="border: 1px solid gray;" /><br>
+
+현재 배포중인 작업을 클릭하면 세부적인 배포 작업 상태를 알 수 있다.   
+배포 작업이 성공하면 Job 상태가 <span style="color:green; font-weight: bold;">녹색(V)</span> 체크 표시로 변경되고   
+Pages URL로 접근하면 변경사항이 적용되어 배포되어 있음을 확인할 수 있다.
+<img src="\assets\img\posts\how-to-custom-jekyll\deploy_status2.png" style="border: 1px solid gray;" /><br>
+* * *
+
 ### 포스팅을 마치며
 여기까지 Jekyll 테마 커스텀 환경 구성이 완료되었다.   
 
