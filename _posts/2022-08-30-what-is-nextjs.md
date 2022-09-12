@@ -18,13 +18,15 @@ Client Side Rendering을 하면 첫페이지에서 빈 html을 가져와 JS파�
 
 React에서도 SSR을 지원하지만 구현하기 굉장히 복잡하기 때문에 Next.js를 통해서 이 문제를 해결해주게 된다.
 
-#### CSR 동작 순서
+<img src="\assets\img\posts\what-is-nextjs\next_js.png" style="width: 20%" /><br>
+
+#### CSR(Client Side Rendering)동작 순서
 1. 브라우저(클라이언트)에 서버 응답
 2. 브라우저가 Javascript 다운로드
 3. 브라우저가 React를 실행
 4. 이후 페이지가 렌더링 및 상호작용 ***(C-S)*** <span style="color: chocolate; font-weight: bold;">(Viewable)</span>   
 
-#### SSR 동작 순서
+#### SSR(Server Side Rendering) 동작 순서
 1. 서버가 준비된 HTMl 페이지를 브라우저(클라이언트)로 응답
 2. 브라우저는 서버가 응답한 페이지 렌더링, Javascript 다운로드 <span style="color: chocolate; font-weight: bold;">(Viewable)</span>
 3. 브라우저가 React를 실행
@@ -42,6 +44,7 @@ React에서도 SSR을 지원하지만 구현하기 굉장히 복잡하기 때문
 <br>
 - Next.js에서는 서버 사이드 렌더링을 이용하므로 사용자와 검색 엔진 크롤러에게 ***바로 렌더링 된 페이지를 전달*** 할 수 있어   
 검색엔진 최적화에 좋은 영향을 준다.
+
 * * *
 
 ## Next JS를 앱 만들기
