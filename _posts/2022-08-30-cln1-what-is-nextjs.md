@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Next JS란?, Next JS를 사용하는 이유
+title: Next JS 란?, Next JS를 사용하는 이유
 date: 2022-09-01
 updated: 
 tags: next-js

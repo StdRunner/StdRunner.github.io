@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Next JS Tutorial (간단한 Blog 만들기)
+title: Next JS Tutorial (간단한 Blog)
 date: 2022-09-12
 updated: 
-tags: next-js
+tags: [next-js, typescript]
 menu: clone-reddit
 ---
 ## 

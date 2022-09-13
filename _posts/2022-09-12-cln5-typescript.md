@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Typescript
+title: Typescript 란?
 date: 2022-09-12
 updated: 
-tags: next-js
+tags: [next-js, typescript]
 menu: clone-reddit
 ---
 ## Typescript가 나오게 된 배경
