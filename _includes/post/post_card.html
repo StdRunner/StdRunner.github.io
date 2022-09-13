@@ -2,13 +2,13 @@
     <div class="card-body">
         <div class="row">
             <div class="col-sm-12">
-                <h4 style="padding-top: 0;"><b><a class="stretched-link" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></b></h4>
+                <h6 style="padding-top: 0;"><b><a class="stretched-link" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></b></h6>
                 <!--<p class="post-title__subtitle">{{ post.date | date: "%b %e, 20%y" }} {% if post.updated %} (Updated {{ post.updated | date: "%b %e, 20%y" }}) {% endif %} by {% if post.author.name %}{{ post.author.name }}{% else %}{{ site.author.name }}{% endif %}{% if post.pin %} • Pinned ⭐{% endif %}<p>-->
                 <div class="post-title__subtitle">{{ post.date | date: "%b %e, 20%y" }} {% if post.updated %} (Updated {{ post.updated | date: "%Y-%m-%d" }}) {% endif %} {% if post.pin %} • Pinned ⭐{% endif %}
                     {% assign tags = post.tags %}
                     {% include tag_loop.html %}
                 </div>
-                <!--<p>{{ post.content | strip_html | truncatewords: 25 }}</p>-->
+                <p class="pre-content">{{ post.content | strip_html | truncatewords: 25 }}</p>
             </div>
 
             <!-- <div class="col-sm-4">

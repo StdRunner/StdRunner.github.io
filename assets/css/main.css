@@ -178,6 +178,11 @@ a.logo:hover {
   text-align: center;
 }
 
+.pre-content {
+  font-size: 13px;
+  margin: 0;
+}
+
 /* =Post page */ /*************************************************************/
 .post-title {
   text-align: left;
