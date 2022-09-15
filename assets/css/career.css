@@ -1,0 +1,29 @@
+.career-password__modal {
+    display: none;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    padding: 5px 10px 5px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid black;
+    top: 30%;
+    left: calc(50% - 200px);
+}
+
+.career-password__background {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #66666644
+}
+
+.btn-close {
+    display: block;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
