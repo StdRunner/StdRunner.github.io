@@ -3,7 +3,7 @@ layout: post
 title: Next JS Tutorial2 (간단한 Blog)
 date: 2022-09-16
 updated: 
-tags: [typescript]
+tags: [next-js, typescript]
 menu: clone-reddit
 ---
 ## getStaticProps를 이용한 포스트 리스트 나열
