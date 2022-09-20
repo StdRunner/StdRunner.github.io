@@ -1,4 +1,8 @@
 real-tags:
+- name : docker
+  color : rgba( 0, 63, 140, 100%)
+- name : node-js
+  color : rgba( 2, 120, 0, 100%)
 - name : typescript
   color : rgba( 49, 120, 198, 100%)
 - name : next-js

@@ -2,7 +2,7 @@
     z-index: 101;
     position: absolute;
     width: 370px;
-    height: 180px;
+    height: 190px;
     padding: 5px 10px 10px;
     border-radius: 5px;
     background-color: white;
@@ -28,14 +28,14 @@
 .career-password__content {
     padding: 20px;
     width: 100%;
-    height: calc(100% - 64px);
+    height: calc(100% - 75px);
     border-top: 1px solid #f0f0f0;
     border-bottom: 1px solid #f0f0f0;
 }
 
 .career-password__footer {
     width: 100%;
-    height: 34px;
+    height: 45px;
 }
 
 .career-password__input {
