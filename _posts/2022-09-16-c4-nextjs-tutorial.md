@@ -101,3 +101,81 @@ menu: clone-reddit
 
     포스팅 제목 클릭 시 title 기반 routing 구현됨
     <img src="\assets\img\posts\nextjs-tutorial2\route.png" style="border: 1px solid gray; width: 80%" />
+
+- - -
+
+## 포스트 데이터를 가져와서 보여주기(remark)
+* getStaticPaths
+동적으로 라우팅이 필요할 때 getStaticPaths로 경로 리스트를 정의하고, HTML build 시간에 렌더링된다.   
+Next js는 pre-render에서 정적으로 getStaticPaths에서 호출하는 경로들을 가져온다.
+
+* 포스트의 ID값을 가져오기
+    ```javascript
+    // 포스트 id 반환 함수
+    export function getAllPostIds() {
+        const fileNmaes = fs.readdirSync(postsDirectory);
+        return fileNmaes.map(fileName => {
+            return {
+                params: {
+                    id: fileName.replace(/\.md%/, '')
+                }
+            }
+        })
+    }
+
+    // getAllPostIds 호출부
+    export const getStaticPaths: GetStaticPaths =async () => {
+        const paths = getAllPostIds()
+        // [{params: {id: 'pre-rendering'} }, ...]
+        return {
+            paths,
+            fallback: false
+        }
+    }
+    ```
+
+* 포스트의 content를 가져와 DOM에 출력
+    ```typescript
+    // 포스트파일의 content를 읽어 contentHtml형태로 반환 
+    export async function getPostData(id: string) {
+        const fullPath = path.join(postsDirectory, `${id}.md`)
+        const fileContents = fs.readFileSync(fullPath, 'utf-8')
+
+        const matterResult = matter(fileContents);
+
+        const processedContent = await remark().use(remarkHtml).process(matterResult.content)
+        const contentHtml = processedContent.toString();
+
+        return {
+            id,
+            contentHtml,
+            ...(matterResult.data as {data: string; title: string})
+        }
+    }
+
+    // getStaticProps를 사용해 페이지 빌드 시 postData를 가져옴
+    export const getStaticProps: GetStaticProps = async ({params}) => {
+    const postData = await getPostData(params.id as string)
+        return {
+            props: {
+                postData
+            }
+        }
+    }
+
+    // 가져온 postData를 HTML형태로 화면에 출력
+    return (
+      <div>
+         <Head>
+            <title>{postData.title}</title>
+         </Head>
+         <article>
+            <h1 className={homeStyles.headingXl}>{postData.title}</h1>
+            <div>
+               {postData.date}
+            </div>
+            <div dangerouslySetInnerHTML= { {__html: postData.contentHtml} } />
+         </article>
+      </div>
+    )
+    ```
