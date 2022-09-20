@@ -7,7 +7,7 @@
 {% endif %}
 <ul class="menu">
 <li class="menu__entry"><a href="{{ site.url }}">home</a></li>
-<li class="menu__entry"><a href="{{ site.url }}/career">career</a></li>
+<li class="menu__entry"><a href="#" onclick="printPasswordModal()">career</a></li>
 <li class="menu__entry"><a href="{{ site.url }}/projects">projects</a></li>
 <li class="menu__entry"><a href="{{ site.url }}/posts">posts</a></li>
 <li class="menu__entry"><a href="{{ site.url }}/tags">tags</a></li>
@@ -46,16 +46,19 @@
 </ul>
 
 <!-- Career Password Modal -->
-<div class="career-password__modal">
+<div class="career-password__modal hidden" id="career-password">
     <div class="career-password__header">
-        <div class="btn-close">X</div>
+        <span class="modal-title">career</span>
     </div>
     <div class="career-password__content">
-        CONTENT
+        <span>패스워드를 입력하세요.</span>
+        <br />
+        <input type="password" class="career-password__input" id="pass"></input>
     </div>
     <div class="career-password__footer">  
-        FOOTER
+        <button class="confirm-btn">confirm</button>
+        <button class="cancel-btn" onclick="hidePasswordModal()">cancel</button>
     </div>
 </div>
-<div class="career-password__background"></div>
+<div class="career-password__background hidden" id="career-password-bg"></div>
 </header>

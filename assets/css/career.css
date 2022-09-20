@@ -1,18 +1,17 @@
 .career-password__modal {
-    display: none;
+    z-index: 101;
     position: absolute;
-    width: 400px;
-    height: 200px;
-    padding: 5px 10px 5px;
+    width: 370px;
+    height: 180px;
+    padding: 5px 10px 10px;
     border-radius: 5px;
     background-color: white;
-    border: 1px solid black;
-    top: 30%;
-    left: calc(50% - 200px);
+    top: 20%;
+    left: calc(50% - 185px);
 }
 
 .career-password__background {
-    display: none;
+    z-index: 100;
     position: absolute;
     top: 0;
     left: 0;
@@ -21,9 +20,83 @@
     background-color: #66666644
 }
 
-.btn-close {
+.modal-title {
+    font-weight: 400;
+    color: #57a;
+    font-size: 150%;}
+
+.career-password__content {
+    padding: 20px;
+    width: 100%;
+    height: calc(100% - 64px);
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.career-password__footer {
+    width: 100%;
+    height: 34px;
+}
+
+.career-password__input {
+    width: 300px;
+    border: 1px solid #c0c4cc;
+    border-radius: 3px;
+}
+
+.confirm-btn {
+    position: absolute;
+    right: 77px;
+    bottom: 7px;
+    background-color: #16a085;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px 5px;
+    vertical-align: bottom; 
+}
+
+.cancel-btn {
+    position: absolute;
+    right: 7px;
+    bottom: 7px;
+    background-color: #999;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px 5px;
+    vertical-align: bottom; 
+}
+
+/* Animation */
+.hidden {
+    display: none;
+}
+
+.appear {
+    animation: fade-in 0.2s;
     display: block;
-    float: right;
-    font-size: 20px;
-    font-weight: bold;
+}
+
+.disappear {
+    animation: fade-out 0.2s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+
+    }
+    to {
+        opacity: 0;
+    }
 }

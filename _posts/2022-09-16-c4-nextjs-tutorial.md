@@ -67,16 +67,16 @@ menu: clone-reddit
   ***페이지 디렉토리 내의 파일은 가장 일반적인 패턴을 정의***하는데 사용한다.
 
 * 예시
-  - `pages/index.js` -> `/`
-  - `pages/blog/index.js` -> `/blog`
+  + `pages/index.js` -> `/`
+  + `pages/blog/index.js` -> `/blog`
 
-  - `pages/blog/first-post.js` -> `/blog/first-post`
+  + `pages/blog/first-post.js` -> `/blog/first-post`
 
-  - `pages/blog/[slug].js` -> `/blog/:slug`(/blog/hello-world)
-  - `pages/[username]/settings.js` -> `/:username/settings` (/foo/settings)
-  - `pages/post/[...all].js` -> `/post/*` (/post/2020/id/title)
-
-* 포스트 파일 생성
+  + `pages/blog/[slug].js` -> `/blog/:slug`(/blog/hello-world)
+  + `pages/[username]/settings.js` -> `/:username/settings` (/foo/settings)
+  + `pages/post/[...all].js` -> `/post/*` (/post/2020/id/title)
+<br><br>
+* 포스트 라우팅 파일 생성
   - `/pages/post` 폴더 생성
   - `/pages/post/[id].tsx]` 파일 생성
 
