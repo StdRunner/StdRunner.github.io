@@ -1,7 +1,7 @@
-function printPasswordModal() {
+function showPasswordModal() {
     const careerPwModal = document.getElementById('career-password');
     const careerPwModalBg = document.getElementById('career-password-bg');
-    const careerPWInput = document.getElementById('password-input');
+    const careerPWInput = document.getElementById('password_input');
 
     careerPwModal.classList.remove('disappear');
     careerPwModalBg.classList.remove('disappear');
@@ -23,3 +23,18 @@ function hidePasswordModal() {
     }, 190);
 }
 
+function checkPassword(value) {
+    if(value === String.fromCharCode(57, 51, 54, 54))
+        window.onload('/career');
+}
+
+function pressEnter(value) {
+    if (window.event.keyCode == 13) {
+        checkPassword(value);
+    }
+}
+
+
+window.addEventListener("hashchange", function(){
+    preventDefault();
+});

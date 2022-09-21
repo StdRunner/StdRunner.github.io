@@ -1,4 +1,8 @@
 real-tags:
+- name : html-css
+  color : crimson
+- name : vanila-js
+  color : rgba( 247, 224, 24, 100%)
 - name : docker
   color : rgba( 0, 63, 140, 100%)
 - name : node-js
