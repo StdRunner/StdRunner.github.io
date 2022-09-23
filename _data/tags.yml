@@ -1,4 +1,6 @@
 real-tags:
+- name : postgresql
+  color : rgba( 51, 103, 145, 100%)
 - name : html-css
   color : crimson
 - name : vanila-js

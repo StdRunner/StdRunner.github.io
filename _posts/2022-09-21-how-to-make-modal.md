@@ -1,21 +1,23 @@
 ---
 layout: post
-title: Vanilla.js 모달(Modal) 만들기
+title: 모달(Modal) 만들기 (Vanilla.js, Html, CSS)
 date: 2022-09-21
 updated: 
 tags: [vanilla-js, html-css]
 menu: jekyllblog
 ---
 ## 개요
-처음엔 이력서 양식으로 블로그 내 하나의 페이지를 구성하고자 했다.   
+처음엔 이력서 양식으로 Jekyll 블로그 내 하나의 페이지를 구성하고자 했다.   
 블로그 URL만으로 내 정보와 이력을 조회할 수 있어 접근성, 준비성 면에서 좋겠다고 생각을 했다.
 
 개인정보가 포함된 페이지이다 보니 누구에게나 공개할 수는 없었고      
-패스워드 모달을 통해 접근을 제한하고자 했으나, 서버를 두지 않는 정적 페이지 특성상   
-브라우저에 패스워드를 저장하지 않고는, 인증 처리를 간단히 수행할 방법이 없겠다는 결론이 나왔다.
+패스워드 모달을 통해 접근을 제한하고자 했으나, 서버를 두지 않는 ***정적 페이지(Jekyll) 특성상***   
+***브라우저에 패스워드를 저장하지 않고는, 인증 처리를 간단히 수행할 방법이 없겠다***는 결론이 나왔다.
 
-해시 알고리즘을 사용하면 평문 그대로를 노출하지는 않겠지만, 그렇게까지 구현할 필요를 느끼지 못했다.
+해시 암호화와 솔트를 사용하면 평문 그대로를 노출하지는 않겠지만, 그렇게까지 구현할 필요를 느끼지 못했다.   
+또 구현하더라도 사이트맴과 URL context-path를 통해 career 페이지로 접근하는 것 까지 막을 방안이 없었다.
 
+이미 구현한 모달을 포스팅으로라도 남기고자 한다.   
 거두절미하고 Vanilla.js, Html, CSS 만을 활용한 Modal 생성 방법을 설명하겠다.
 
 - - -
@@ -54,7 +56,7 @@ menu: jekyllblog
 모달이 클로즈 되도록하는 역할.
 
 [모달 예시]
-<img src="\assets\img\posts\javascript modal\modal.png" style="border: 1px solid gray;" /><br>
+<img src="\assets\img\posts\javascript-modal\modal.png" style="border: 1px solid gray;" /><br>
 
 - - -
 
@@ -164,7 +166,10 @@ function showPasswordModal() {
 
 fade-in, fade-out 애니메이션이 0.2초간 실행되나, setTimeout 설정을 190ms인 이유는   
 200으로 설정할 경우 
-fade-out 완료 이후 appear 클래스가 제거되는 타이밍 이슈로 DOM이 깜빡이는 것 같은 효과가 종종 발생함   
+모달의 fade-out 애니메이션 완료 시점과 appear 클래스가 제거되는 시점의 텀이 DOM에 반영되면   
+모달이 깜빡이는 것 같은 타이밍 이슈가 종종 발생한다.
+
+이를 해결하기 위해 모달의 fade-out 애니메이션 완료 직전 appear 클래스를 제거하기 위함이다.
 
 ***[버튼]***
 ```html
