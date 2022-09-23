@@ -364,7 +364,7 @@ a.logo:hover {
 .menu_item_selected {
   margin: 0 0 10px 0;
   color: #565656;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
 }
 

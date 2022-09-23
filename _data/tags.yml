@@ -1,4 +1,6 @@
 real-tags:
+- name : typeorm
+  color : rgba( 232, 53, 36, 100% )
 - name : postgresql
   color : rgba( 51, 103, 145, 100%)
 - name : html-css
