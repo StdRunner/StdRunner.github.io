@@ -299,6 +299,14 @@ a.logo:hover {
   .posts_pannel {
     display: block !important;
   }
+
+  .posts_menu {
+    position: relative !important;
+  }
+
+  .posts_list {
+    margin-left: 0 !important;
+  }
 }
 
 .card .btn {
@@ -343,6 +351,7 @@ a.logo:hover {
 }
 
 .posts_menu {
+  position: fixed;
   width: fit-content;
   padding: 0 40px 20px 0;
   min-width: 250px;
@@ -350,6 +359,7 @@ a.logo:hover {
 }
 
 .posts_list {
+  margin-left: 300px;
   width: 100%;
 }
 
