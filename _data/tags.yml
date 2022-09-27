@@ -5,7 +5,7 @@ real-tags:
   color : rgba( 51, 103, 145, 100%)
 - name : html-css
   color : crimson
-- name : vanila-js
+- name : vanilla-js
   color : rgba( 247, 224, 24, 100%)
 - name : docker
   color : rgba( 0, 63, 140, 100%)

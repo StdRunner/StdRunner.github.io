@@ -40,19 +40,20 @@ Typescript 는 Javascript에서 기본으로 제공하는 기본 제공 유형�
 Typescript 유형은 다음과 같이 분류 된다.
 
 * Primitive Types
-  + string
-  + nubmer
-  + boolean
-  + null
-  + undefined
-  + symbol
+  + string : 문자열
+  + nubmer : 숫자 값
+  + boolean : true 와 false 값
+  + null : 하나의 값을 가짐 - null
+  + undefined : 하나의 값을 가짐 - undefined, 초기화되지 않은 변수의 기본값
+  + symbol : 고유한 상수 값
 <br><br>
 * Object Types
-  + function
-  + array
-  + classes
-  + object
+  + function : 함수
+  + array : 배열
+  + classes : 클래스
+  + object : 객체
 
+<img src="\assets\img\posts\typescript-type\typescript-type.png" style="border: 1px solid gray; width: 50%;" />
 - - -
 
 ## Typescript에서 추가로 제공하는 Type

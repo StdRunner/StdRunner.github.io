@@ -6,7 +6,7 @@ updated:
 tags: [docker, postgresql]
 menu: clone-reddit
 ---
-## docker-compsoe를 사용해 Postgresql 컨테이너 실행
+## docker-compose를 사용해 Postgresql 컨테이너 실행
 docker-compose란 Docker 이미지를 이용해 컨테이너를 실행하는 것에 더해
 `docker-compose.yml`, `Dockerfile` 등의 설정파일을 사용하여   
 host/guest 포트 설정, volume 매핑, 환경변수 설정, 컨테이너 실행 후 shell 수행 등   

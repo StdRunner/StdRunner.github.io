@@ -21,16 +21,19 @@ React에서도 SSR을 지원하지만 구현하기 굉장히 복잡하기 때문
 <img src="\assets\img\posts\what-is-nextjs\next_js.png" style="width: 20%" /><br>
 
 #### CSR(Client Side Rendering)동작 순서
+
 1. 브라우저(클라이언트)에 서버 응답
 2. 브라우저가 Javascript 다운로드
 3. 브라우저가 React를 실행
 4. 이후 페이지가 렌더링 및 상호작용 ***(C-S)*** <span style="color: chocolate; font-weight: bold;">(Viewable)</span>   
+<img src="\assets\img\posts\what-is-nextjs\ssr.png" style="border: 1px solid gray;" />
 
 #### SSR(Server Side Rendering) 동작 순서
 1. 서버가 준비된 HTMl 페이지를 브라우저(클라이언트)로 응답
 2. 브라우저는 서버가 응답한 페이지 렌더링, Javascript 다운로드 <span style="color: chocolate; font-weight: bold;">(Viewable)</span>
 3. 브라우저가 React를 실행
 4. 페이지 상호작용 ***(C-S)***
+<img src="\assets\img\posts\what-is-nextjs\csr.png" style="border: 1px solid gray; width:80%;" />
 
 #### Server Side Rendering
 - 클라이언트 대신 ***서버에서 페이지를 준비***하는 원리 
@@ -55,7 +58,9 @@ React에서도 SSR을 지원하지만 구현하기 굉장히 복잡하기 때문
 <img src="\assets\img\posts\what-is-nextjs\make_dir.png" style="border: 1px solid gray; width: 80%" /><br>
 
 생성한 폴더 경로에서 터미널(CMD 등)을 열어 다음 명령어를 입력한다.   
-`npx create-next-app@latest --typescript ./`   
+```
+npx create-next-app@latest --typescript ./   
+```
 
 현재 경로(./)를 입력 시 앱 폴더를 따로 생성하지 않고 현재 폴더를 앱 폴더로 사용한다.   
 앱 폴더명을 지정해 생성하고 싶은 사람은 `./`를 입력하지 않아도 괜찮다.   

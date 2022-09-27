@@ -55,6 +55,7 @@ Pre-rendering을 하고 있음을 알 수 있다.
 <img src="\assets\img\posts\what-is-pre-rendering\next_app_no_js.png" style="border: 1px solid gray; width: 80%;" />
 
 ## Summary
+<img src="\assets\img\posts\what-is-pre-rendering\no_pre_rendering.png" style="border: 1px solid gray; width: 80%;" />
 * Normal React App
   + 최초 Load
     - Not use Pre-rendering
@@ -62,12 +63,14 @@ Pre-rendering을 하고 있음을 알 수 있다.
   + JS Load
   + Hydration
     - 리액트 컴포넌트 초기화
-    - App 상호작용 가능   
+    - App 상호작용 가능      
+
 <br>
+<img src="\assets\img\posts\what-is-pre-rendering\pre_rendering.png" style="border: 1px solid gray; width: 80%;" />
 * Next JS App
   + 최초 Load
     - use Pre-rendering
   + JS Load
   + Hydration
     - 리액트 컴포넌트 초기화
-    - App 상호작용 가능
+    - App 상호작용 가능    

@@ -22,6 +22,7 @@ var a= 10;
 3. `:`    : Annotate  
 4. number : Data Type
 5. 10     : 초기화
+<img src="\assets\img\posts\anno-infer\init-var.png" style="border: 1px solid gray; width: 40%;" />
 
 #### 타입을 추론하지 못해서 Annotation을 꼭 해줘야 하는 경우
 * **any 타입을 리턴하는 경우**    
@@ -38,9 +39,10 @@ console.log(coordinates);
 나중에 초기화하는 경우 추로할 수 없다.
 ```javascript
 let greeting
-greeting = 'hello1';
+greeting = 'hello';
 ```
 
 * **변수에 대입될 값이 일정치 못한 경우**    
 변수의 타입이 조건에 따라 변동될 가능성이 있는 경우로   
 변수 a가 조건에 따라 boolean, nubmer로 변경될 수 있는 경우 Annotation이 필요하다.
+<img src="\assets\img\posts\anno-infer\multi-type.png" style="border: 1px solid gray; width: 40%;" />

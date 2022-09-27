@@ -38,7 +38,7 @@ npx typeorm init
 MyProject   
 ┣━━━━━━ src   
 ┃        ┣━━━ entity (entities로 변경)
-┃        ┃     ┣━━━ User.ts   
+┃        ┃     ┗━━━ User.ts   
 ┃        ┣━━━ migration   
 ┃        ┣━━━ data-source.ts  // typeorm 설정을 위한 파일
 ┃        ┗━━━ index.ts   
