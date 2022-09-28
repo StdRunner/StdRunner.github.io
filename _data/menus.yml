@@ -1,4 +1,6 @@
 real-menus:
+- title : CI/CD
+  menuname : ci-cd
 - title : Node, React 시리즈 - 레딧 사이트 만들기(NextJS)
   menuname : clone-reddit
 - title : 지킬(Jekyll) 블로그

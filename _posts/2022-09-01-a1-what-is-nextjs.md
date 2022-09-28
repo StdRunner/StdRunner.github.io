@@ -26,14 +26,14 @@ React에서도 SSR을 지원하지만 구현하기 굉장히 복잡하기 때문
 2. 브라우저가 Javascript 다운로드
 3. 브라우저가 React를 실행
 4. 이후 페이지가 렌더링 및 상호작용 ***(C-S)*** <span style="color: chocolate; font-weight: bold;">(Viewable)</span>   
-<img src="\assets\img\posts\what-is-nextjs\ssr.png" style="border: 1px solid gray;" />
+<img src="\assets\img\posts\what-is-nextjs\csr.png" style="border: 1px solid gray; width:80%;" />
 
 #### SSR(Server Side Rendering) 동작 순서
 1. 서버가 준비된 HTMl 페이지를 브라우저(클라이언트)로 응답
 2. 브라우저는 서버가 응답한 페이지 렌더링, Javascript 다운로드 <span style="color: chocolate; font-weight: bold;">(Viewable)</span>
 3. 브라우저가 React를 실행
 4. 페이지 상호작용 ***(C-S)***
-<img src="\assets\img\posts\what-is-nextjs\csr.png" style="border: 1px solid gray; width:80%;" />
+<img src="\assets\img\posts\what-is-nextjs\ssr.png" style="border: 1px solid gray;" />
 
 #### Server Side Rendering
 - 클라이언트 대신 ***서버에서 페이지를 준비***하는 원리 
@@ -41,7 +41,7 @@ React에서도 SSR을 지원하지만 구현하기 굉장히 복잡하기 때문
 <br>
 - 원래 React에서는 클라이언트 사이드 렌더링하기 때문에 서버에서 클라이언트로 응답해서 보낸 html도 거의 빈 페이지
   + <span style="color: crimson; font-weight: bold;">[단점]</span> 이 방식은 서버에서 데이터를 가져올 때 지연 시간 발생으로 UX 측면에서 좋지 않을 수 있습니다.
-  + <span style="color: crimson; font-weight: bold;">[단점]</span> 검색 엔진에 검색 시 웹 클롤링이 동작할 때 내용을 제대로 가져와 읽을 수 없기에 검색엔진 최적화에 문제가 된다.   
+  + <span style="color: crimson; font-weight: bold;">[단점]</span> 검색 엔진에 검색 시 웹 크롤링이 동작할 때 내용을 제대로 가져와 읽을 수 없기에 검색엔진 최적화에 문제가 된다.   
     * <span style="color: #57a; font-style: italic">검색 엔진 최적화?<span>   
       <span style="color: #57a; font-style: italic"> : 구글 또는 네이버와 같은 검색 엔진에서 키워드를 입력했을 때 검색이 잘 될 수 있도록 하는 구조화<span>   
 <br>

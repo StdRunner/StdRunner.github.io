@@ -53,8 +53,8 @@ Next JS는 pre-rendering에서 정적으로 getStaticPaths에서 호출하는 �
 #### getServerSideProps 
 Server Side Rendering으로 요청이 있을 때 데이터를 불러온다.
 
-getServerSideProps 함수를 async로 expor하면,   
-Next는 각 요청마다 리턴된ㄴ 데이터를 getServerSideProps로 pre-redner 한다.
+getServerSideProps 함수를 async로 export하면,   
+Next는 각 요청마다 리턴된 데이터를 getServerSideProps로 pre-redner 한다.
 
 * ***getServerSideProps***를 사용해야 할 때
   * 요청할 때 데이터를 가져와야 하는 페이지를 미리 렌더링 해야할 때 사용.   

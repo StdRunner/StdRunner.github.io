@@ -1,4 +1,8 @@
 real-tags:
+- name : gitlab
+  color : rgba( 252, 109, 39, 100% )
+- name : jenkins
+  color : black
 - name : typeorm
   color : rgba( 232, 53, 36, 100% )
 - name : postgresql
@@ -14,7 +18,7 @@ real-tags:
 - name : typescript
   color : rgba( 49, 120, 198, 100%)
 - name : next-js
-  color : black
+  color : rgba( 50, 50, 50, 100%)
 - name : jekyll-blog
   color : rgba( 199, 30, 36, 100%)
 - name : vscode
