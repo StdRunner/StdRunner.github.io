@@ -2,6 +2,7 @@
 layout: page
 ---
 {% assign posts = site.posts %}
+{% assign selectedPage = 1 %}
 <div class="posts_pannel">
   <div class="posts_menu">
     <hr>
@@ -12,7 +13,7 @@ layout: page
     {% include menu_loop.html %}
     <hr>
   </div>
-  <div class="posts_list">
+  <div class="posts_list" id="posts_list">
     {% assign posts = site.posts | where: 'menu', page.menu %}
     
     {% if posts[0] %}
@@ -28,14 +29,42 @@ layout: page
 <script>
   const totalcnt = {{ posts.size }};
   const pages = document.getElementById("posts-pages");
+  const postCards = document.getElementById("posts_list").childNodes;
+  
+  for(i=0; i<10; i++) {
+    try {
+      postCards[(i*2)+1].classList.remove("hidden")
+    } catch (e) {}
+  }
+  
   if(totalcnt > 10) {
     for(i=1; i<=(parseInt(totalcnt/10) + 1); i++) {
-      console.log(i);
       const pageTag = document.createElement('span');
   
-      i===1 ? pageTag.setAttribute("class", "posts-page first-page") : 
+      i===1 ? pageTag.setAttribute("class", "posts-page_selected first-page") : 
         pageTag.setAttribute("class", "posts-page");
         
+      pageTag.addEventListener("click", function(e) {
+        postCards.forEach(element => {
+          try {
+            element.classList.add("hidden");
+          } catch (e) {}
+        });
+        
+        const start = (e.target.innerText * 10) - 10;
+        const end = (e.target.innerText * 10);
+        for(i=start; i<end; i++) {
+          try {
+            postCards[(i*2)+1].classList.remove("hidden")
+          } catch (e) {}
+        }
+
+        const pages = document.getElementById("posts-pages").childNodes;
+        for(i=0; i<pages.length; i++) {
+          pages[i].classList.replace("posts-page_selected", "posts-page");
+        }
+        e.target.classList.add("posts-page_selected")
+      })
       pageTag.innerHTML = i;
   
       pages.appendChild(pageTag);

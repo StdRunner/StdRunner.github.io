@@ -370,7 +370,7 @@ a.logo:hover {
   margin: 0 0 10px 0;
   color: #565656;
   font-weight: 600;
-  cursor: pointer;
+  pointer-events: none;
 }
 
 .post-card-image {
@@ -387,6 +387,10 @@ a.logo:hover {
 
 .darkmode-layer {
   z-index: 2000;
+}
+
+.hidden {
+  display: none;
 }
 
 /* =Glitch effect, Source: http://codepen.io/bulby97/pen/fcvay */ /*************************************************************/

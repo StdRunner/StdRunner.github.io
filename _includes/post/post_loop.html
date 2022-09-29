@@ -1,9 +1,4 @@
-{% assign start = page | times: 10 | minus: 10 %}
-{% assign end = page | times: 10 | minus: 1 %}
-{% assign range = (start..end) %}
-
-{% for i in range %}   
-    {% assign post = posts[i] %}
+{% for post in posts %}      
     {% unless post.listed == false %}
         {% if post.pin %}
             {% include post/post_card.html %}
@@ -11,8 +6,7 @@
     {% endunless %}   
 {% endfor %}
 
-{% for i in range %}      
-    {% assign post = posts[i] %}
+{% for post in posts %}      
     {% unless post.listed == false %}
         {% if post.pin != true %}
             {% include post/post_card.html %}

@@ -1,19 +1,28 @@
+.posts-pages {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .posts-page {
     padding : 0 10px 0;
     color : gray;
     cursor : pointer;
-    border-right : 1px solid rgba(0,0,0,.1);;
+    border-right : 1px solid rgba(0,0,0,.1);
 }
 
-.posts-page.first-page {
-    border-left : 1px solid rgba(0,0,0,.1);;
-    border-right : 1px solid rgba(0,0,0,.1);;
+.posts-page_selected {
+    padding : 0 10px 0;
+    color: #565656;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.first-page {
+    border-left : 1px solid rgba(0,0,0,.1);
+    border-right : 1px solid rgba(0,0,0,.1);
 }
 
 .posts-page:hover {
     color : darkgray;
-}
-
-.posts-page.selected {
-    font-weight: 600;
 }
