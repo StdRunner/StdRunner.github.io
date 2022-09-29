@@ -346,10 +346,6 @@ a.logo:hover {
 }
 
 /* posts menu css */
-.posts_pannel {
-  display: flex;
-}
-
 .posts_menu {
   position: fixed;
   width: fit-content;
@@ -360,7 +356,6 @@ a.logo:hover {
 
 .posts_list {
   margin-left: 300px;
-  width: 100%;
 }
 
 .menu_item {

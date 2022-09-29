@@ -21,4 +21,24 @@ layout: page
         <p>No posts in this menu</p>
     {% endif %}
   </div>
+
+  <div class="posts-pages" id="posts-pages"></div>
 </div>
+
+<script>
+  const totalcnt = {{ posts.size }};
+  const pages = document.getElementById("posts-pages");
+  if(totalcnt > 10) {
+    for(i=1; i<=(parseInt(totalcnt/10) + 1); i++) {
+      console.log(i);
+      const pageTag = document.createElement('span');
+  
+      i===1 ? pageTag.setAttribute("class", "posts-page first-page") : 
+        pageTag.setAttribute("class", "posts-page");
+        
+      pageTag.innerHTML = i;
+  
+      pages.appendChild(pageTag);
+    }
+  }
+  </script>
