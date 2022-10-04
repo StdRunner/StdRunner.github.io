@@ -16,6 +16,7 @@ menu: clone-reddit
 import { Expose } from "class-transformer";
 import { Column, Entity, Index, JoinColumn, ManyToMany, ManyToOne, OneToMany } from "typeorm";
 import BaseEntity from './Entity';
+import Post from "./Post";
 import { User } from "./User";
 
 @Entity("subs")
@@ -43,7 +44,7 @@ export default class Sub extends BaseEntity {
     @JoinColumn({ name: "username", referencedColumnName:"username" })
     user: User;
 
-    @OneToMany(() => postMessage, (post) => post.sub)
+    @OneToMany(() => Post, (post) => post.sub)
     posts: Post[]
 
     @Expose()

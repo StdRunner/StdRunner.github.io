@@ -14,12 +14,15 @@ menu: clone-reddit
 ## 포스트 엔티티 작성
 ```typescript
 import { Exclude, Expose } from "class-transformer";
-import { BeforeInsert, Column, Index, JoinColumn, ManyToOne, OneToMany } from "typeorm";
+import { BeforeInsert, Column, Entity, Index, JoinColumn, ManyToOne, OneToMany } from "typeorm";
 import { makeId, slugify } from "../utils/helpers";
 import BaseEntity from "./Entity";
 import Sub from "./Sub";
 import { User } from "./User";
+import Vote from "./Vote";
+import Comment from "./Comment";
 
+@Entity("posts")
 export default class Post extends BaseEntity {
     @Index()
     @Column()
