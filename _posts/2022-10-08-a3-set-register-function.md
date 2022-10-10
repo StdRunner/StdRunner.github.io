@@ -161,6 +161,9 @@ NEXT_PUBLIC_SERVER_BASE_URL=http://localhost:5000
 Client App의 ***최상단 컴포넌트인***    
 `reddit-clone-app\client\src\pages\_app.tsx` 파일 내 
 아래 내용을 추가한다.
+
+***Next.js에서는 "NEXT_PUBLIC" 으로 시작하는 환경변수만 사용 가능하다***
+
 ```typescript
 ...생략
 import Axios from 'axios'
