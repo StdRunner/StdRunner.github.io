@@ -178,14 +178,14 @@ dotenv.config();
 **[응답]**
 ```json
 {
-    token : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRveXVuIiwiaWF0IjoxNjY1MzkzODI4fQ._PN70DU2dddAbZMS1MmCx7rT20TmKTdumYhSvKQAdOE",
-    user : {
-        createdAt : "2022-10-10T00:16:33.319Z"
-        email : "kdy95@inzent.com"
-        id : 7
-        password : "$2a$06$4E9EgjZTq2uijDig1TTyl.queBrIVkmf2mmX6pORqQEgq0QdVtc1m"
-        updatedAt : "2022-10-10T00:16:33.319Z"
-        username : "doyun"
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRveXVuIiwiaWF0IjoxNjY1MzkzODI4fQ._PN70DU2dddAbZMS1MmCx7rT20TmKTdumYhSvKQAdOE",
+    "user" : {
+        "createdAt" : "2022-10-10T00:16:33.319Z"
+        "email" : "kdy95@inzent.com"
+        "id" : 7
+        "password" : "$2a$06$4E9EgjZTq2uijDig1TTyl.queBrIVkmf2mmX6pORqQEgq0QdVtc1m"
+        "updatedAt" : "2022-10-10T00:16:33.319Z"
+        "username" : "doyun"
     }
 }
 ```
