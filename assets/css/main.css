@@ -259,7 +259,7 @@ a.logo:hover {
 }
 
 .writer-profile {
-  margin: auto;
+  margin: auto 30px auto auto;
   width: 100px;
   height: 100px;
 }
