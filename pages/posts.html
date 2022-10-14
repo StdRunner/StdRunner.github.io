@@ -8,7 +8,6 @@ sitemap:
   priority: 0.9
 ---
 {% assign posts = site.posts %}
-<!-- {% assign selectedPage = 1 %} -->
 <div class="posts_pannel">
   <div class="posts_menu">
     <hr>
@@ -27,30 +26,49 @@ sitemap:
 </div>
 
 <script>
+// 전체 포스트 카운트
 const totalcnt = {{ posts.size }};
+// 페이지 엘리먼트
 const pages = document.getElementById("posts-pages");
+// 포스트카드 엘리먼트
 const postCards = document.getElementById("posts_list").childNodes;
 
+// 전체 포스트 숨김
 for(i=0; i<10; i++) {
   try {
     postCards[(i*2)+1].classList.remove("hidden")
   } catch (e) {}
 }
 
+/**
+ *  1. 포스트 개수가 10 초과 시 페이지 span 생성
+ *  2. 페이지 수(포스트 카운트 1의 자리 올림 / 10) 루프 수행
+ *    2-1. 루프 내용
+ *      - 페이지 버튼 생성
+ *      - 페이지 버튼 클릭 이벤트 주입
+ *        2-1-1. 이벤트 내용
+ *                - 전체 포스트 hidden 추가
+ *                - 포스트 카드 엘리먼트를 루프돌며 페이지에 속한 포스트 hidden 제거
+ *    
+ */
 if(totalcnt > 10) {
   for(i=1; i<=(parseInt(totalcnt/10) + 1); i++) {
+    // 페이지 버튼 생성
     const pageTag = document.createElement('span');
 
     i===1 ? pageTag.setAttribute("class", "posts-page_selected first-page") : 
       pageTag.setAttribute("class", "posts-page");
       
+    // 페이지 버튼에 클릭 이벤트 주입
     pageTag.addEventListener("click", function(e) {
+      // 전체 포스트 hidden 추가 
       postCards.forEach(element => {
         try {
           element.classList.add("hidden");
         } catch (e) {}
       });
       
+      // 페이지에 해당하는 포스트 hidden 제거
       const start = (e.target.innerText * 10) - 10;
       const end = (e.target.innerText * 10);
       for(i=start; i<end; i++) {
@@ -59,6 +77,7 @@ if(totalcnt > 10) {
         } catch (e) {}
       }
 
+      // 현재 페이지 버튼 활성화
       const pages = document.getElementById("posts-pages").childNodes;
       for(i=0; i<pages.length; i++) {
         pages[i].classList.replace("posts-page_selected", "posts-page");

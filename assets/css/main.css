@@ -70,6 +70,12 @@ th {
   text-align: left;
   padding: 8px;
 }
+.highlight code {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: none !important;
+}
 /*  
   tr:nth-child(even) {
     background-color: #dddddd;
