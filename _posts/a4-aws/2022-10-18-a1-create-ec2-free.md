@@ -4,7 +4,7 @@ title: 무료로 AWS EC2 인스턴스 사용하기(프리 티어)
 date: 2022-10-18
 updated: 
 tags: [aws]
-menu: ci-cd
+menu: aws
 ---
 ## 개요
 진행중인 ***사이드 프로젝트의 배포 관리***를 위해 AWS(Amazon Web Service) EC2 인스턴스를 생성할 이유가 생겼다.   
