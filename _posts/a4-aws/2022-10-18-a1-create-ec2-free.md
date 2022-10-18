@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 무료로 AWS EC2 사용하기
+title: 무료로 AWS EC2 인스턴스 사용하기(프리 티어)
 date: 2022-10-18
 updated: 
 tags: [aws]
@@ -83,5 +83,21 @@ AWS 프리 티어 외의 서비스 중 일부도 평가판을 제공하니 필�
     <img src="/assets/img/posts/aws/aws-start-ec2-key.png" style="border: 1px solid gray; width: 80%" />   
     <img src="/assets/img/posts/aws/aws-start-ec2-key2.png" style="border: 1px solid gray; width: 60%" />   
 
+* 아래 화면에서 인스턴스의 ***네트워크 설정***을 한다.   
+    사전에 생성된 보안 그룹(인스턴스 방화벽)이 없으므로 `보안 그룹 설정`을 선택한다.   
+    ssh 트래픽을 허용하고 외부 접근을 차단하기 위해 ***내 IP***로 설정하는 것이 안전하다.   
 
-aws-start-ec2-net.png
+    `0.0.0.0/0` 형태로 방화벽 허용 시 무차별 포트 연결 시도를 통해 서버에 접근하여   
+    멀웨어나 채굴 프로세스를 설치하는 경우가 종종 발견되므로 미리 주의하는 것이 좋다.
+    <img src="/assets/img/posts/aws/aws-start-ec2-net.png" style="border: 1px solid gray; width: 60%" />   
+
+* 스토리지 크기는 `30GB`크기의 `gp2`로 입력한다.   
+    info에서 알려주듯 30GB까지는 프리 티어 사용이 가능하다.
+    <img src="/assets/img/posts/aws/aws-start-ec2-strg.png" style="border: 1px solid gray; width: 60%" />   
+
+* 여기까지 설정 완료 후 `인스턴스 시작`을 누르면 인스턴스가 시작된다.   
+    Default 계정은 대부분 `ec2-user`지만, OS AMI에 따라 다르다.    
+    인스턴스 목록에서 `Running` 상태라면 이전에 생성한 키 파일을 사용하여 ssh 접속이 가능하다.   
+    <img src="/assets/img/posts/aws/aws-start-ec2-list.png" style="border: 1px solid gray;" />   
+    **[ssh 접속]**
+    <img src="/assets/img/posts/aws/aws-start-ec2-ssh.png" style="border: 1px solid gray; width:60%" />   
