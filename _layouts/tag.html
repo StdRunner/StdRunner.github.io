@@ -22,7 +22,9 @@ layout: page
 {% if projects[0] %}
     {% include project/project_loop.html %}
 {% else %}
-    <p>No projects with this tag.</p>
+    <div class="card-columns">
+      <p>No projects with this tag.</p>
+    </div>
 {% endif %}
 
 <script>

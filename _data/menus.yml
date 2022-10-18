@@ -5,6 +5,8 @@ real-menus:
   menuname : clone-reddit
 - title : 지킬(Jekyll) 블로그
   menuname : jekyllblog
+- title : AWS
+  menuname : aws
 sample-menus:
 - title : 샘플 포스트
   menuname : samplepost

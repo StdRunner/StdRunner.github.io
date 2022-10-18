@@ -313,6 +313,10 @@ a.logo:hover {
   .posts_list {
     margin-left: 0 !important;
   }
+
+  .card-columns {
+    margin-left: 0 !important;
+  }
 }
 
 .card .btn {
@@ -386,6 +390,13 @@ a.logo:hover {
   filter: brightness(96%);
   object-fit: cover;
 }
+/**/
+
+/* projects card style */
+.card-columns {
+  margin-left: 300px;
+}
+/**/
 
 .go-home {
   text-align: center;
