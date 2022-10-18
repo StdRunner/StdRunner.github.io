@@ -5,12 +5,14 @@ layout: page
 <br>
 {% assign posts = site.posts | where: 'tags', page.tag %}
 
-<div class="posts_list" id="posts_list">
-{% if posts[0] %}
-    {% include post/post_loop.html %}
-{% else %}
-    <p>No posts with this tag.</p>
-{% endif %}
+<div class="loop-margin">
+    <div class="posts_list" id="posts_list">
+        {% if posts[0] %}
+            {% include post/post_loop.html %}
+        {% else %}
+            <p>No posts with this tag.</p>
+        {% endif %}
+    </div>
 </div>
 <div class="posts-pages" id="posts-pages"></div>
 
@@ -20,10 +22,12 @@ layout: page
 {% assign projects = site.data.projects | where: 'tags', page.tag %}
 
 {% if projects[0] %}
-    {% include project/project_loop.html %}
+    <div class="loop-margin">
+        {% include project/project_loop.html %}
+    </div>
 {% else %}
-    <div class="card-columns">
-      <p>No projects with this tag.</p>
+    <div class="loop-margin">
+        <p>No projects with this tag.</p>
     </div>
 {% endif %}
 

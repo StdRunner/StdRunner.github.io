@@ -310,11 +310,7 @@ a.logo:hover {
     position: relative !important;
   }
 
-  .posts_list {
-    margin-left: 0 !important;
-  }
-
-  .card-columns {
+  .loop-margin {
     margin-left: 0 !important;
   }
 }
@@ -355,6 +351,10 @@ a.logo:hover {
   color: white;
 }
 
+.loop-margin {
+  margin-left: 300px;
+}
+
 /* posts menu css */
 .posts_menu {
   position: fixed;
@@ -362,10 +362,6 @@ a.logo:hover {
   padding: 0 40px 20px 0;
   min-width: 250px;
   max-width: 300px;
-}
-
-.posts_list {
-  margin-left: 300px;
 }
 
 .menu_item {
@@ -389,12 +385,6 @@ a.logo:hover {
   height: 100%;
   filter: brightness(96%);
   object-fit: cover;
-}
-/**/
-
-/* projects card style */
-.card-columns {
-  margin-left: 300px;
 }
 /**/
 
