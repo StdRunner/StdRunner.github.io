@@ -37,13 +37,13 @@ AWS 프리 티어 외의 서비스 중 일부도 평가판을 제공하니 필�
 
     <img src="/assets/img/posts/aws/aws-free-tier.png" style="border: 1px solid gray;" />   
 
-    <img src="/assets/img/posts/aws/aws-sign-on.png" style="border: 1px solid gray;" />   
+    <img src="/assets/img/posts/aws/aws-sign-up.png" style="border: 1px solid gray;" />   
 
 * 이메일 인증, 주소 입력, 카드 정보 입력, 휴대폰 인증 등 총 5단계를 거져 가입 절차를 수행하게 된다.   
     카드 정보 입력 시 해외 결제가 가능한 Master, VISA 카드를 사용해야 하니 참고하자.
 
-    <img src="/assets/img/posts/aws/aws-sign-on-2.png" style="border: 1px solid gray; width: 60%;" />   
-    <img src="/assets/img/posts/aws/aws-sign-on-3.png" style="border: 1px solid gray; width: 60%;" />   
+    <img src="/assets/img/posts/aws/aws-sign-up-2.png" style="border: 1px solid gray; width: 60%;" />   
+    <img src="/assets/img/posts/aws/aws-sign-up-3.png" style="border: 1px solid gray; width: 60%;" />   
 
 - - -
 
