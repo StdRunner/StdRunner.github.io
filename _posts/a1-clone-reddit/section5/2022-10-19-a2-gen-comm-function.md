@@ -202,6 +202,23 @@ export default async (req: Request, res: Response, next: NextFunction) => {
 }
 ```
 
+#### 미들웨어 적용하기
+구현한 미들웨어를 적용하기 위해 `reddit-clone-app\server\src\routes\subs.ts` 파일에 아래 내용을 추가한다.
+```typescript
+...생략
+import userMiddleware from "../middlewares/user";
+import authMiddleware from "../middlewares/auth";
+...생략
+
+const router = Router();
+
+// 미들웨어 추가 부분
+// 요청이 들어올 시 핸들러 수행 전 미들웨어 수행.
+router.post('/', userMiddleware, authMiddleware, createSub);
+
+export default router;
+```
+
 - - -
 
 ## Cookie 처리
