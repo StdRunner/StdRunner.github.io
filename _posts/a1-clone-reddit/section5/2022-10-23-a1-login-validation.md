@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 로그인된 사람만 커뮤니티 생성 페이지 들어가
+title: 로그인된 사람만 커뮤니티 생성 페이지 진입 가능하도록 하기
 date: 2022-10-23
 updated: 
 tags: [typescript, next-js, tailwindcss]
