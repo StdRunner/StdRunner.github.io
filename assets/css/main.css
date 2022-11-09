@@ -264,8 +264,12 @@ a.logo:hover {
   font-size: 130%;
 }
 
+.writer-info {
+  display: flex;
+}
+
 .writer-profile {
-  margin: auto 30px auto auto;
+  margin: auto 0;
   width: 200px;
   height: 200px;
 }
@@ -312,6 +316,10 @@ a.logo:hover {
 
   .loop-margin {
     margin-left: 0 !important;
+  }
+
+  .writer-info {
+    display: block;
   }
 }
 
