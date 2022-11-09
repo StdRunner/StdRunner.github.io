@@ -30,6 +30,7 @@ sitemap:
 <script>
 // 전체 포스트 카운트
 const totalcnt = {{ posts.size }};
+console.log(totalcnt);
 // 페이지 엘리먼트
 const pages = document.getElementById("posts-pages");
 // 포스트카드 엘리먼트
@@ -51,10 +52,11 @@ for(i=0; i<10; i++) {
  *        2-1-1. 이벤트 내용
  *                - 전체 포스트 hidden 추가
  *                - 포스트 카드 엘리먼트를 루프돌며 페이지에 속한 포스트 hidden 제거
- *    
+ *    (parseInt(totalcnt/10) + 1)
  */
+const pageCnt = totalcnt%10 === 0 ? totalcnt/10 : (parseInt(totalcnt/10) + 1);
 if(totalcnt > 10) {
-  for(i=1; i<=(parseInt(totalcnt/10) + 1); i++) {
+  for(i=1; i<=pageCnt; i++) {
     // 페이지 버튼 생성
     const pageTag = document.createElement('span');
 
