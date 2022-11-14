@@ -346,7 +346,7 @@ Next.js의 이미지 태그를 사용 시 잘못된 src 값을 사용했을 때 
 <img src="\assets\img\posts\comm-list\err2.png" style="border: 1px solid gray;" />
 
 `reddit-clone-app\server\src\routes\subs.ts` 파일, topSubs 핸들러의   
-NULL 체크를 위한 COALESCE 함수를 사용한 쿼리를 IF THEN 구문으로 변경해주면 해결된다.
+NULL 체크를 위한 COALESCE 함수를 사용한 쿼리를 아래와 같이 변경해주면 해결된다.
 ```typescript
 ...생략
 const topSubs = async (_:Request, res:Response) => {
