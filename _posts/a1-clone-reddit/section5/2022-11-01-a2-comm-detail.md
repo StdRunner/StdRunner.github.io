@@ -123,7 +123,7 @@ const SubPage = () => {
                     {/* 커뮤니티 메타 데이터 */}
                     <div className='h-20 bg-white'>
                         <div className='relative flex max-w-5xl px-5 mx-auto'>
-                            <div className='absolute' style={{ top: -15 }}>
+                            <div className='absolute' style={ { top: -15 } }>
                             {
                                 sub.imageUrl && (
                                     <Image 
