@@ -351,7 +351,7 @@ NULL 체크를 위한 COALESCE 함수를 사용한 쿼리를 IF THEN 구문으�
 ...생략
 const topSubs = async (_:Request, res:Response) => {
     try {
-        const imageUrlExp = `COALESCE('${process.env,APP_URL}/images/'|| s."imageUrn", 'http://www.gravatar.com/avatar?d=mp&f=y')`;
+        const imageUrlExp = `COALESCE('${process.env.APP_URL}/images/'|| s."imageUrn", 'http://www.gravatar.com/avatar?d=mp&f=y')`;
         const subs = await AppDataSource
             .createQueryBuilder()
             .select(`s.title, s.name, ${imageUrlExp} as "imageUrl", count(p.id) as "postCount"`)
