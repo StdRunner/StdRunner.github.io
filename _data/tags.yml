@@ -1,4 +1,6 @@
 real-tags:
+- name : swr
+  color : rgba( 50, 50, 50, 100%)
 - name : aws
   color : rgba( 248, 153, 29, 100% )
 - name : tailwindcss
