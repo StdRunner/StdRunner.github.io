@@ -4,6 +4,7 @@ layout: page
 {% assign posts = site.posts %}
 <div class="posts_pannel">
   <div class="posts_menu">
+    <input class="search-keyword" type="text" />
     <hr>
     {% assign menus = site.data.menus.real-menus %}
     {% include menu_loop.html %}
@@ -28,6 +29,9 @@ layout: page
 </div>
 
 <script>
+/**
+ * [Pagination]
+ */ 
 // 전체 포스트 카운트
 const totalcnt = {{ posts.size }};
 // 페이지 엘리먼트
@@ -53,7 +57,7 @@ for(i=0; i<10; i++) {
  *                - 포스트 카드 엘리먼트를 루프돌며 페이지에 속한 포스트 hidden 제거
  *    
  */
- const pageCnt = totalcnt%10 === 0 ? totalcnt/10 : (parseInt(totalcnt/10) + 1);
+const pageCnt = totalcnt%10 === 0 ? totalcnt/10 : (parseInt(totalcnt/10) + 1);
 if(totalcnt > 10) {
   for(i=1; i<=pageCnt; i++) {
     // 페이지 버튼 생성

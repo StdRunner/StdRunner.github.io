@@ -367,7 +367,7 @@ a.logo:hover {
 .posts_menu {
   position: fixed;
   width: fit-content;
-  padding: 0 40px 20px 0;
+  padding: 0 24px 24px 0;
   min-width: 250px;
   max-width: 300px;
 }
@@ -395,6 +395,22 @@ a.logo:hover {
   object-fit: cover;
 }
 /**/
+
+/* post search */
+.search-keyword {
+  width: 100%;
+  height: 40px;
+  border: none;
+  background-color: #f4f4f4;
+  padding-left: 44px;
+  padding-right: 24px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPgogICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQgNCkiIHN0cm9rZT0iI0I1QjVCNSIgc3Ryb2tlLXdpZHRoPSIxLjYiPgogICAgICAgICAgICA8Y2lyY2xlIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGN4PSI2LjUiIGN5PSI2LjUiIHI9IjYuNSIvPgogICAgICAgICAgICA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIGQ9Im0xMS41IDExLjUgNSA1Ii8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K");
+  background-repeat: no-repeat;
+  background-position: 0.8rem;
+  border-radius: 6px;
+  outline: none;
+}
+/* post search end */
 
 .go-home {
   text-align: center;

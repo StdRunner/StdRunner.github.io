@@ -10,6 +10,7 @@ sitemap:
 {% assign posts = site.posts %}
 <div class="posts_pannel">
   <div class="posts_menu">
+    <input class="search-keyword" type="text" onchange="search(event)" placeholder=""/>
     <hr>
     {% assign menus = site.data.menus.real-menus %}
     {% include menu_loop.html %}
@@ -30,12 +31,25 @@ sitemap:
 <script>
 // 전체 포스트 카운트
 const totalcnt = {{ posts.size }};
-console.log(totalcnt);
 // 페이지 엘리먼트
 const pages = document.getElementById("posts-pages");
 // 포스트카드 엘리먼트
 const postCards = document.getElementById("posts_list").childNodes;
 
+/**
+ * [Search]
+ */ 
+const search = (e) => {
+  // 검색어 가져오기
+  let keyword = e.target.value;
+  
+  // 각 포스트 카드 순회
+  console.log('postCards[0]:', postCards[0].innerHTML);
+}
+
+/**
+ * [Pagination]
+ */ 
 // 전체 포스트 숨김
 for(i=0; i<10; i++) {
   try {
