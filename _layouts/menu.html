@@ -40,6 +40,10 @@ layout: page
     let postCards = document.getElementsByClassName("card-body");
     // 페이지 카운트
     let pageCnt = totalcnt%10 === 0 ? totalcnt/10 : (parseInt(totalcnt/10) + 1);
+    // 전체 포스트 내용
+    let postsHtml = document.getElementById('posts_list').innerHTML;
+
+    posts_list
 
     // 최신 10개 포스트 보여줌
     for(i=0; i<10; i++) {
