@@ -185,7 +185,7 @@ a.logo:hover {
 }
 
 .pre-content {
-  font-size: 14px;
+  font-size: 15px;
   margin: 0;
   line-height: 1.2rem;
 }
@@ -410,6 +410,11 @@ a.logo:hover {
   background-position: 0.8rem;
   border-radius: 6px;
   outline: none;
+}
+
+.maching-keyword {
+  font-weight: bolder;
+  color: #57a;
 }
 /* post search end */
 

@@ -5,10 +5,20 @@
 }
 
 .posts-page {
+    font-size: 18px;
     padding : 0 10px 0;
     color : gray;
     cursor : pointer;
-    border-right : 1px solid rgba(0,0,0,.1);
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.posts-pages-title {
+    padding-top: 0;
+    text-align: center;
 }
 
 .posts-page_selected {
@@ -16,11 +26,6 @@
     color: #565656;
     font-weight: 600;
     pointer-events: none;
-}
-
-.first-page {
-    border-left : 1px solid rgba(0,0,0,.1);
-    border-right : 1px solid rgba(0,0,0,.1);
 }
 
 .posts-page:hover {
