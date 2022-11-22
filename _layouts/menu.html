@@ -4,7 +4,7 @@ layout: page
 {% assign posts = site.posts %}
 <div class="posts_pannel">
   <div class="posts_menu">
-    <input class="search-keyword" type="text" />
+    <input class="search-keyword" type="text" onchange="search(event)" placeholder="제목, 태그, 미리보기"/>
     <hr>
     {% assign menus = site.data.menus.real-menus %}
     {% include menu_loop.html %}
@@ -29,71 +29,117 @@ layout: page
 </div>
 
 <script>
-/**
- * [Pagination]
- */ 
-// 전체 포스트 카운트
-const totalcnt = {{ posts.size }};
-// 페이지 엘리먼트
-const pages = document.getElementById("posts-pages");
-// 포스트카드 엘리먼트
-const postCards = document.getElementById("posts_list").childNodes;
-
-// 전체 포스트 숨김
-for(i=0; i<10; i++) {
-  try {
-    postCards[(i*2)+1].classList.remove("hidden")
-  } catch (e) {}
-}
-
-/**
- *  1. 포스트 개수가 10 초과 시 페이지 span 생성
- *  2. 페이지 수(포스트 카운트 1의 자리 올림 / 10) 루프 수행
- *    2-1. 루프 내용
- *      - 페이지 버튼 생성
- *      - 페이지 버튼 클릭 이벤트 주입
- *        2-1-1. 이벤트 내용
- *                - 전체 포스트 hidden 추가
- *                - 포스트 카드 엘리먼트를 루프돌며 페이지에 속한 포스트 hidden 제거
- *    
- */
-const pageCnt = totalcnt%10 === 0 ? totalcnt/10 : (parseInt(totalcnt/10) + 1);
-if(totalcnt > 10) {
-  for(i=1; i<=pageCnt; i++) {
-    // 페이지 버튼 생성
-    const pageTag = document.createElement('span');
-
-    i===1 ? pageTag.setAttribute("class", "posts-page_selected first-page") : 
-      pageTag.setAttribute("class", "posts-page");
-      
-    // 페이지 버튼에 클릭 이벤트 주입
-    pageTag.addEventListener("click", function(e) {
-      // 전체 포스트 hidden 추가 
-      postCards.forEach(element => {
-        try {
-          element.classList.add("hidden");
-        } catch (e) {}
-      });
-      
-      // 페이지에 해당하는 포스트 hidden 제거
-      const start = (e.target.innerText * 10) - 10;
-      const end = (e.target.innerText * 10);
-      for(i=start; i<end; i++) {
-        try {
-          postCards[(i*2)+1].classList.remove("hidden")
-        } catch (e) {}
-      }
-
-      // 현재 페이지 버튼 활성화
-      const pages = document.getElementById("posts-pages").childNodes;
-      for(i=0; i<pages.length; i++) {
-        pages[i].classList.replace("posts-page_selected", "posts-page");
-      }
-      e.target.classList.add("posts-page_selected")
-    })
-    pageTag.innerHTML = i;
-
-    pages.appendChild(pageTag);
+  // 전체 포스트 카운트
+  let totalcnt = {{ posts.size }};
+  // 페이지 엘리먼트
+  let pages = document.getElementById("posts-pages");
+  // 포스트카드 엘리먼트
+  // const postCards = document.getElementById("posts_list").childNodes;
+  let postCards = document.getElementsByClassName("card-body");
+  // 페이지 카운트
+  let pageCnt = totalcnt%10 === 0 ? totalcnt/10 : (parseInt(totalcnt/10) + 1);
+  
+  /**
+   * [Pagination]
+   */ 
+  // 최신 10개 포스트 보여줌
+  for(i=0; i<10; i++) {
+    try {
+      postCards[i].parentNode.classList.remove("hidden")
+    } catch (e) {}
   }
-}
+  
+  /**
+   *  1. 포스트 개수가 10 초과 시 페이지 span 생성
+   *  2. 페이지 수(포스트 카운트 1의 자리 올림 / 10) 루프 수행
+   *    2-1. 루프 내용
+   *      - 페이지 버튼 생성
+   *      - 페이지 버튼 클릭 이벤트 주입
+   *        2-1-1. 이벤트 내용
+   *                - 전체 포스트 hidden 추가
+   *                - 포스트 카드 엘리먼트를 루프돌며 페이지에 속한 포스트 hidden 제거
+   *    (parseInt(totalcnt/10) + 1)
+   */
+  const pagination = () => {
+    if(totalcnt > 10) {
+      for(i=1; i<=pageCnt; i++) {
+        // 페이지 버튼 생성
+        const pageTag = document.createElement('span');
+  
+        i===1 ? pageTag.setAttribute("class", "posts-page_selected first-page") : 
+          pageTag.setAttribute("class", "posts-page");
+          
+        // 페이지 버튼에 클릭 이벤트 주입
+        pageTag.addEventListener("click", function(e) {
+          // 전체 포스트 hidden 추가 
+          // postCards.forEach(element => {
+          //   try {
+          //     element.classList.add("hidden");
+          //   } catch (e) {}
+          // });
+          [].forEach.call(postCards, function (postCard) {
+            postCard.parentNode.classList.add("hidden")
+          });
+          
+          // 페이지에 해당하는 포스트 hidden 제거
+          const start = (e.target.innerText * 10) - 10;
+          const end = (e.target.innerText * 10);
+          console.log(start, end);
+          for(i=start; i<end; i++) {
+            try {
+              postCards[i].parentNode.classList.remove("hidden")
+            } catch (e) {}
+          }
+  
+          // 현재 페이지 버튼 활성화
+          const pages = document.getElementById("posts-pages").childNodes;
+          for(i=0; i<pages.length; i++) {
+            pages[i].classList.replace("posts-page_selected", "posts-page");
+          }
+          e.target.classList.add("posts-page_selected")
+        })
+        pageTag.innerHTML = i;
+  
+        pages.appendChild(pageTag);
+      }
+    }
+  }
+  
+  /**
+   * [Search]
+   */ 
+   const search = (e) => {
+    // 검색어 가져오기
+    let keyword = e.target.value;
+    let searchPostCards = [];
+  
+    [].forEach.call(document.getElementsByClassName("card-body"), function (postCard) {
+      if(postCard.innerText.normalize('NFC').includes(keyword)) {
+        searchPostCards.push(postCard);
+      }
+    });
+  
+    totalcnt = searchPostCards.length;
+    postCards = searchPostCards;
+    pageCnt = totalcnt%10 === 0 ? totalcnt/10 : (parseInt(totalcnt/10) + 1);
+  
+    console.log(totalcnt, postCards, pageCnt);
+    // 전체 포스트 hidden
+    [].forEach.call(document.getElementsByClassName("card-body"), function (postCard) {
+      postCard.parentNode.classList.add("hidden")
+    });
+  
+    // 기존 페이지 UI 제거
+    pages.innerHTML = '';
+    pagination();
+  
+    // 최신 10개 포스트 보여줌
+    for(i=0; i<10; i++) {
+      try {
+        postCards[i].parentNode.classList.remove("hidden")
+      } catch (e) {}
+    }
+  }
+  
+  pagination();
 </script>

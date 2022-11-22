@@ -185,8 +185,9 @@ a.logo:hover {
 }
 
 .pre-content {
-  font-size: 13px;
+  font-size: 14px;
   margin: 0;
+  line-height: 1.2rem;
 }
 
 /* =Post page */ /*************************************************************/
