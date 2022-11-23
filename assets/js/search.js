@@ -21,6 +21,15 @@ const search = (e) => {
     postCards = searchPostCards;
     pageCnt = totalcnt%10 === 0 ? totalcnt/10 : (parseInt(totalcnt/10) + 1);
 
+    // 검색 결과 요약
+    document.getElementById('search-keyword').innerText = keyword;
+    document.getElementById('search-count').innerText = totalcnt + '건';
+    if(keyword === '') {
+        document.getElementById('search-result').classList.add('hidden');
+    } else {
+        document.getElementById('search-result').classList.remove('hidden');
+    }
+
     // 전체 포스트 hidden
     [].forEach.call(document.getElementsByClassName("card-body"), function (postCard) {
         postCard.parentNode.classList.add("hidden")

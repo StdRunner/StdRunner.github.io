@@ -14,7 +14,11 @@
  *    (parseInt(totalcnt/10) + 1)
  */
 const pagination = () => {
+    document.getElementById('posts-pages-title').classList.add('hidden');
+
     if(totalcnt > 10) {
+        document.getElementById('posts-pages-title').classList.remove('hidden');
+
         for(i=1; i<=pageCnt; i++) {
         // 페이지 버튼 생성
         const pageTag = document.createElement('span');

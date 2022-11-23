@@ -10,7 +10,12 @@ sitemap:
 {% assign posts = site.posts %}
 <div class="posts_pannel">
     <div class="posts_menu">
-        <input class="search-keyword" type="text" onchange="search(event)" placeholder="제목, 태그, 미리보기"/>
+        <input class="search-input" type="text" onchange="search(event)" placeholder="제목, 태그, 미리보기"/>
+        <div id="search-result" class="search-result hidden">
+          <span id="search-keyword"></span>에 대한 검색결과입니다. 
+          <br />
+          <span id="search-count"></span>
+        </div>
         <hr>
         {% assign menus = site.data.menus.real-menus %}
         {% include menu_loop.html %}
@@ -24,7 +29,7 @@ sitemap:
           {% include post/post_loop.html %}
         </div>
     </div>
-    <h5 class="posts-pages-title">Pages</h5>
+    <h5 class="posts-pages-title" id="posts-pages-title">Pages</h5>
     <div class="posts-pages" id="posts-pages"></div>
 </div>
 
@@ -42,8 +47,6 @@ sitemap:
     let pageCnt = totalcnt%10 === 0 ? totalcnt/10 : (parseInt(totalcnt/10) + 1);
     // 전체 포스트 내용
     let postsHtml = document.getElementById('posts_list').innerHTML;
-
-    posts_list
 
     // 최신 10개 포스트 보여줌
     for(i=0; i<10; i++) {
