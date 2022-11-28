@@ -9,6 +9,7 @@ layout: page
       <span id="search-keyword"></span>에 대한 검색결과입니다. 
       <br />
       <span id="search-count"></span>
+      <div class="search-reset" onclick="reset()">RESET</div>
     </div>
     <hr>
     {% assign menus = site.data.menus.real-menus %}
@@ -56,4 +57,23 @@ layout: page
     }
 
     pagination();
+
+    const reset = () => { 
+        totalcnt = {{ posts.size }};
+        postCards = document.getElementsByClassName("card-body");
+        pageCnt = totalcnt%10 === 0 ? totalcnt/10 : (parseInt(totalcnt/10) + 1);
+
+        // 최신 10개 포스트 보여줌
+        for(i=0; i<10; i++) {
+            try {
+                postCards[i].parentNode.classList.remove("hidden")
+            } catch (e) {}
+        }
+
+        document.getElementsByClassName('search-input')[0].value = '';
+        pages.innerHTML = '';
+        pagination();
+
+        document.getElementById('search-result').classList.add('hidden');
+    }
 </script>

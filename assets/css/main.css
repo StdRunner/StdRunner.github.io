@@ -426,6 +426,17 @@ a.logo:hover {
   font-weight: bolder;
   color: darkblue;
 }
+
+.search-reset {
+  margin-bottom: 10px;
+  color: gray;
+  cursor: pointer;
+  float: right;
+}
+
+.search-reset:hover {
+  color: darkgray;
+}
 /* post search end */
 
 .go-home {
