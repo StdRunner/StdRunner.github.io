@@ -1,6 +1,8 @@
 real-menus:
 - title : Node, React 시리즈 - 레딧 사이트 만들기(NextJS)
   menuname : clone-reddit
+- title : SQL 성능 고도화 튜닝
+  menuname : sql-tune
 - title : Jekyll 블로그
   menuname : jekyllblog
 - title : CI/CD
