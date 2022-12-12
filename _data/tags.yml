@@ -1,4 +1,8 @@
 real-tags:
+- name : sql-tunning
+  color : rgba( 0, 130, 117, 100%)
+- name : oracle
+  color : rgba( 255, 0, 0, 100%)
 - name : swr
   color : rgba( 50, 50, 50, 100%)
 - name : aws

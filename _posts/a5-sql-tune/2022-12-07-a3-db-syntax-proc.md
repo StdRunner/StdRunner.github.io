@@ -3,7 +3,7 @@ layout: post
 title: Chapter 2. 문장 처리 과정
 date: 2022-12-07
 updated: 
-tags: 
+tags: [oracle, sql-tunning]
 menu: sql-tune
 ---
 

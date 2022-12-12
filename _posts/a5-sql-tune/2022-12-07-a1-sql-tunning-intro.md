@@ -3,7 +3,7 @@ layout: post
 title: 데이터베이스 SQL 성능 고도화 튜닝 강의 개요
 date: 2022-12-07
 updated: 
-tags: 
+tags: [oracle, sql-tunning]
 menu: sql-tune
 ---
 ## 개요

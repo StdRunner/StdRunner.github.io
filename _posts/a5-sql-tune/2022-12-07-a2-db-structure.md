@@ -3,7 +3,7 @@ layout: post
 title: Chapter 1. 데이터베이스 구조
 date: 2022-12-07
 updated: 
-tags: 
+tags: [oracle, sql-tunning]
 menu: sql-tune
 ---
 ## Oracle 데이터베이스 서버 구조
