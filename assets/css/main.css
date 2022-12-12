@@ -415,7 +415,7 @@ a.logo:hover {
 
 #search-keyword {
   font-weight: bolder;
-  color: darkblue;
+  color: black;
 }
 
 #search-count {
@@ -424,7 +424,7 @@ a.logo:hover {
 
 .maching-keyword {
   font-weight: bolder;
-  color: darkblue;
+  color: black;
 }
 
 .search-reset {
