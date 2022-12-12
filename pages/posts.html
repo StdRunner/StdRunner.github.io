@@ -62,6 +62,8 @@ sitemap:
         totalcnt = {{ posts.size }};
         postCards = document.getElementsByClassName("card-body");
         pageCnt = totalcnt%10 === 0 ? totalcnt/10 : (parseInt(totalcnt/10) + 1);
+        
+        document.getElementById('posts_list').innerHTML = postsHtml;
 
         // 최신 10개 포스트 보여줌
         for(i=0; i<10; i++) {
