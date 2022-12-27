@@ -4,7 +4,10 @@ layout: page
 {% assign posts = site.posts %}
 <div class="posts_pannel">
   <div class="posts_menu">
-    <input class="search-input" type="text" onchange="search(event)" placeholder="제목, 태그, 미리보기"/>
+    <div>
+      <i class="fa-solid fa-magnifying-glass fa-lg search-img" onclick="search(event)"></i>
+      <input class="search-input" type="text" onchange="search(event)" placeholder="제목, 태그, 미리보기" />
+    </div>
     <div id="search-result" class="search-result hidden">
       <span id="search-keyword"></span>에 대한 검색결과입니다. 
       <br />

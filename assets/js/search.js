@@ -6,7 +6,7 @@ const search = (e) => {
     let keyword = e.target.value;
 
     // 검색어가 빈값일 때
-    if(keyword === '') {
+    if(keyword === '' || keyword === undefined) {
         return;
     }
 
