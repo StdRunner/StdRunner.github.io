@@ -3,12 +3,12 @@ real-menus:
   menuname : clone-reddit
 - title : SQL 성능 고도화 튜닝
   menuname : sql-tune
-- title : Jekyll 블로그
-  menuname : jekyllblog
 - title : CI/CD
   menuname : ci-cd
 - title : AWS
   menuname : aws
+- title : Jekyll 블로그
+  menuname : jekyllblog
 sample-menus:
 - title : 샘플 포스트
   menuname : samplepost

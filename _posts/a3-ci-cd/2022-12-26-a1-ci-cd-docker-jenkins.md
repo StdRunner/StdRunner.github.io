@@ -45,7 +45,7 @@ Docker Compose는 Docker 가상화 컨테이너를 사전에 yaml 파일로 정�
 사전에 yaml파일에 Docker 이미지, 컨테이너 이름, 호스트 서버-컨테이너 간 포트/볼륨 공유 설정,   
 전체 수명 주기를 관리 등을 정의한다.
 
-Docker 컨테이너를 실행할 폴더를 생성하고 `docker-compose.yml` 파일을 아래와 같이 작성한다.
+Docker 컨테이너를 실행할 폴더를 생성하고 `docker-compose-jenkins.yml` 파일을 아래와 같이 작성한다.
 ```yaml
 # Docker 버전
 version: '3'
@@ -72,7 +72,7 @@ services:
     environment:
 ```
 
-해당 yaml 파일을 사용해 Docker 컨테이너를 실행하는 쉘 파일 `jenkins-up.sh`을 아래와 같이 작성한다.
+해당 yaml 파일을 사용해 Docker 컨테이너를 실행하는 쉘 파일 `docker-jenkins.sh`을 아래와 같이 작성한다.
 ```sh
 # docker-compose 
 ## -f $1    : 파일 명시
@@ -82,8 +82,9 @@ services:
 case "$1" in
     'start') # Start Jenkins Docker Container
         echo "Start Jenkins Docker Container...: "
-        sudo docker-compose -f ./docker-compose.yml up --build -d
+        sudo docker-compose -f ./docker-compose-jenkins.yml up --build -d
 
+        # 직전 실행 커맨트 성공 값 (0 : 성공 / 1 : 실패)
         RVAL=$?
         echo $RVAL
         exit $RVAL
@@ -91,17 +92,17 @@ case "$1" in
 
     'stop') # Stop Jenkins Docker Container
         echo "Stop Jenkins Docker Container...: "
-        sudo docker-compose -f ./docker-compose.yml down
+        sudo docker-compose -f ./docker-compose-jenkins.yml down
 
         RVAL=$?
         echo $RVAL
         exit $RVAL
         ;;
 
-    'restart') # Stop Jenkins Docker Container
+    'restart') # Restart Jenkins Docker Container
         echo "Restart Jenkins Docker Container...: "
-        sudo docker-compose -f ./docker-compose.yml down
-        sudo docker-compose -f ./docker-compose.yml up --build -d
+        sudo docker-compose -f ./docker-compose-jenkins.yml down
+        sudo docker-compose -f ./docker-compose-jenkins.yml up --build -d
 
         RVAL=$?
         echo $RVAL
@@ -112,7 +113,7 @@ esac
 
 아래 명령어로 매개변수와 함께 sh파일을 실행하여 Jenkins 컨테이너를 실행한다.
 ```sh
-~$ ./jenkins-up.sh start
+~$ ./docker-jenkins.sh start
 ```
 
 Docker 컨테이너 확인 명령어를 통해 아래와 같이 실행된 Jenkins 컨테이너를 확인할 수 있다.
@@ -169,3 +170,28 @@ Jenkins Job에서 어플리케이션 빌드/통합 과정에서 **참조할 grad
 Apache Ant, NodeJS도 마찬가지로 설정해준다.
 <img src="\assets\img\posts\ci-cd\ant-setting.png" style="border : 1px solid gray; width: 100%"/>
 <img src="\assets\img\posts\ci-cd\nodejs-setting.png" style="border : 1px solid gray; width: 100%"/>
+
+- - -
+
+## Gitlab credential 추가
+내 시스템에서 소스 레파지토리는 Gitlab에서 관리하고 있으므로 Jenkins에서 레파지토리에 접근하여   
+소스를 빌드하기 위해 Gitlab credential을 추가해야 한다.
+
+1. 젠킨스 대시보드 메뉴 중 `Jenkins 관리` 클릭
+<img src="\assets\img\posts\ci-cd\jenkins-menu.png" style="border : 1px solid gray; width: 30%"/>
+
+2. `Security > Manage Credential` 클릭
+<img src="\assets\img\posts\ci-cd\mng-credential.png" style="border : 1px solid gray; width: 100%"/>
+
+3. `global scope` 클릭 후 `Add credential` 클릭
+<img src="\assets\img\posts\ci-cd\add-credential.png" style="border : 1px solid gray; width: 100%"/>
+
+4. 아래 내용을 입력하고 `Create` 버튼을 눌러 프로젝트 레파지토리에 접근 가능한 Gitlab Credential을 등록한다.
+* Username with password : id, pw를 사용한 인증
+* Scope : Credential의 사용 가능 범위를 지정
+* Username : Gitlab 사용자 이름 
+  + 로그인 E-mail이 아닌 사용자 이름만 입력
+* Passowrd : Gitlab 사용자 패스워드
+* ID : 해당 Credential을 참조하기 위한 고유 ID
+* Description : Credential에 대한 간단한 설명
+<img src="\assets\img\posts\ci-cd\add-credential2.png" style="border : 1px solid gray; width: 100%"/>
