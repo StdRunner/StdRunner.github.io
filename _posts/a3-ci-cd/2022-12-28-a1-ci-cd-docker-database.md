@@ -40,6 +40,7 @@ Docker Compose는 앞서 말한 바와 같이 Docker 컨테이너를 사전에 y
 
 우선 컨테이너 정의 파일인 `docker-compose-db.yml` 파일을 생성하고 아래 내용을 추가한다.
 내 시스템의 지원 DBMS 세 가지 Oracle, Postgresql, Tibero가 정의되어 있다.
+##### [docker-compose-db.yml]
 ```yaml
 # Docker 버전
 version: "3"
@@ -137,8 +138,9 @@ services:
 `docker-compose-db.yml` 파일로 정의한 Docker 컨테이너를 실행해주는 쉘 파일을 생성한다.   
 `docker-onlydb.sh`파일을 생성하고 아래 내용을 입력한다.
 
-해당 쉘 파일은 실행 시 start, stop, restart 매개변수를 받아 컨테이너를 ***실행/중지/재시작***할 수 있도록 한다.
+해당 쉘 파일은 실행 시 start, stop, restart 매개변수를 받아 컨테이너를 ***실행/중지/재시작***할 수 있도록 한다.   
 이제 DBMS 별 상세 설정에 대해 살펴보자
+##### [docker-onlydb.sh]
 ```sh
 #!/bin/bash
 
@@ -182,13 +184,26 @@ esac
 ~$ ./docker-onlydb.sh start
 ```
 
-#### Oracle 상세 설정
+- - - 
+
+## Oracle 상세 설정
+`docker-compose-db.yml` 파일에서 정의한 Oracle 서비스 컨테이터의 환경변수 파일 `oracle.env` 내용은 아래와 같다.
+##### [oracle.env]
+```
+# 오라클 유저 패스워드를 변경하기 위한 환경변수
+JDBC_USERNAME=XEDRM5
+JDBC_PASSWORD=1234
+JDBC_USERNAME1=XEDRM6
+JDBC_PASSWORD1=1234
+```
+
 `docker-compose-db.yml` 파일에 정의한 Oracle 컨테이너 Dockerfile의 내용은 아래와 같다.
 
 ***FROM 구문***에서 어떤 Docker 이미지를 사용할지 정의한다.   
 Oracle Database는 Docker 공식 이미지가 없으므로 다른 사용자의 이미지를 활용했다.
 
 구문 별 상세 내용은 아래 주석을 참고하면 된다.
+##### [Dockerfile]
 ```Dockerfile
 # Docker 컨테이너 이미지
 FROM jaspeen/oracle-xe-11g
@@ -217,6 +232,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 ```
 
 Dockerfile 내에서 컨테이너 기동 작업으로 수행하는 `entrypoint.sh` 파일의 주요 내용을 살펴보자.
+##### [entrypoint.sh]
 ```sh
 #!/bin/bash
 
@@ -226,7 +242,7 @@ chown -R oracle:dba /u01/app/oracle
 rm -f /u01/app/oracle/product
 ln -s /u01/app/oracle-product /u01/app/oracle/product
 
-# 현재 실행 프로세스에서 환경변수 설정
+# CHARSET 환경변수 설정
 export CHARACTER_SET="AL32UTF8"
 echo "CHARACTER_SET=AL32UTF8"
 
@@ -297,7 +313,7 @@ case "$1" in
                         echo "Database initialized. Please visit http://#containeer:8080/apex to proceed with configuration"
                 fi
 
-                # 오라클 기동
+                # 오라클 인스턴스 기동
                 /etc/init.d/oracle-xe start
 
                 echo "oracle password settings ================================================================== $syspassword"
@@ -305,16 +321,21 @@ case "$1" in
                 # Oracle User Password 변경 쉘
                 /setPassword.sh $JDBC_PASSWORD
 
-                # 볼륨에서 설치 스크립트 수행
+                # Oracle Database 초기 실행 여부 판단
+                # 공유 볼륨에서 설치 스크립트 수행
                 if [ $IMPORT_FROM_VOLUME ]; then
                         echo "Starting import from '/docker-entrypoint-initdb.d':"
 
+                        # /docker-entrypoint-initdb.d 경로 하위 파일 LOOP
+                        # sh, sql, dmp 파일 실행, 이외의 파일은 미실행
+                        # impdb 명령이 없어 불가
                         for f in $(ls /docker-entrypoint-initdb.d/*); do
                                 echo "found file $f"
                                 case "$f" in
                                         *.sh)     echo "[IMPORT] $0: running $f"; . "$f" ;;
+                                        # sqlplus slient 모드로 sql파일 실행
                                         *.sql)    echo "[IMPORT] $0: running $f"; echo "exit" | su oracle -c "$CHARSET_MOD $ORACLE_HOME/bin/sqlplus -S / as sysdba @$f"; echo ;;
-                                        *.dmp)    echo "[IMPORT] $0: running $f"; impdp $f ;;
+                                        *.dmp)    echo "[IMPORT] $0: running $f"; "$CHARSET_MOD $ORACLE_HOME/bin/impdp system/$JDBC_PASSWORD dumpfile=$f"; echo ;;
                                         *)        echo "[IMPORT] $0: ignoring $f" ;;
                                 esac
                                 echo
@@ -328,6 +349,8 @@ case "$1" in
                         echo
                 fi
 
+                # App DB 유저 계정 변경
+                # setUserPassword.sh : Dockerfile에서 정의한 호스트 서버에서 컨테이너로 옯긴 파일
                 echo "oracle user password settings ================================================================== $JDBC_USERNAME"
                 echo "oracle user password settings ================================================================== $JDBC_PASSWORD"
                 /setUserPassword.sh $JDBC_USERNAME '$JDBC_PASSWORD'
@@ -350,3 +373,6 @@ case "$1" in
                 ;;
 esac
 ```
+
+`entrypoint.sh` 에서 사용하기 위해 컨테이너로 이동한 파일을 확인해보자
+##### [setPassword.sh]
