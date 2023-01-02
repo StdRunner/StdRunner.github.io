@@ -35,9 +35,9 @@ NodeJS의 실행 스크립트를 변경하기 위해 `\reddit-clone-app\server\p
 ```json
 ...생략
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "ts-node src/server.ts",
     "dev": "env-cmd -f .env.development nodemon --exec ts-node ./src/server.ts",
-    "start:prod": "env-cmd -f .env.production ts-node ./src/index.ts",
+    "start:prod": "env-cmd -f .env.production ts-node ./src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "typeorm": "typeorm-ts-node-commonjs"
   },

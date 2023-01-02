@@ -32,7 +32,7 @@ Application의 실행 스크립트를 변경하기 위해 `\reddit-clone-app\cli
   "scripts": {
     "dev": "next dev",
     "build:dev": "env-cmd -f .env.development next build",
-    "buildLprod": "env-cmd -f .env.production next build",
+    "build:prod": "env-cmd -f .env.production next build",
     "start:dev": "env-cmd -f .env.development next start",
     "start:prod": "env-cmd -f .env.production next start",
     "lint": "next lint"
