@@ -1,4 +1,6 @@
 real-tags:
+- name : java
+  color : rgba( 78, 120, 150, 100%)
 - name : tibero
   color : rgba( 0, 68, 140, 100%)
 - name : sql-tunning
