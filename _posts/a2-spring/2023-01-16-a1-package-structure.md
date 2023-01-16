@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 패키지 구조의 선택
+title: 디렉토리 패키지 구조의 선택과 이해
 date: 2023-01-16
 updated: 
 tags: 
