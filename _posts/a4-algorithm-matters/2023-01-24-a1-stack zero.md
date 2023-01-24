@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 스택
-date: 2023-01-17
+title: 스택 제로
+date: 2023-01-24
 updated: 
 tags: [java]
 menu: algorithm-matters
 ---
-## 스택
+## 스택 제로
 * Reference URL : [https://www.acmicpc.net/problem/10773](https://www.acmicpc.net/problem/10773)
 > 백준 온라인 저지
 
