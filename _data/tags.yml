@@ -1,4 +1,6 @@
 real-tags:
+- name : react-js
+  color : rgba( 97, 218, 251, 100%)
 - name : java
   color : rgba( 78, 120, 150, 100%)
 - name : tibero
