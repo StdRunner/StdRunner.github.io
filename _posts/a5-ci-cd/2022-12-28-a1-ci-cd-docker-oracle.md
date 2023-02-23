@@ -1,9 +1,9 @@
 ---
 layout: post
-title: CI/CD 환경 구성(Docker Compose로 Database 인스턴스 구성)
-date: 2022-12-26
+title: Docker Compose로 Database 인스턴스 구성 (개요, Oracle)
+date: 2022-12-28
 updated: 
-tags: [jenkins, docker, oracle, postgrsql, tibero]
+tags: [jenkins, docker, oracle]
 menu: ci-cd
 ---
 ## 개요
@@ -33,7 +33,7 @@ CI/CD 환경을 구성할 때 Server, Front 소스만 통합하여 배포한다�
 - - -
 
 ## Docker Compose로 DB 인스턴스 생성, 실행
-Docker Compose는 앞서 말한 바와 같이 Docker 컨테이너를 사전에 yaml 파일로 정의하여 실행하기 위한 도구이다.   
+Docker Compose는 Docker 컨테이너를 사전에 yaml 파일로 정의하여 실행하기 위한 도구이다.   
 추가적인 내용과 설치/사용 방법은 공식 문서 또는 오픈소스를 참조하도록 하자.
 
 * [https://docs.docker.com/compose/](https://docs.docker.com/compose/)
@@ -326,7 +326,7 @@ case "$1" in
                 if [ $IMPORT_FROM_VOLUME ]; then
                         echo "Starting import from '/docker-entrypoint-initdb.d':"
 
-                        # /docker-entrypoint-initdb.d 경로 하위 파일 LOOP
+                        # /docker-entrypoint-initdb.d/ 경로 하위 파일 LOOP
                         # sh, sql, dmp 파일 실행, 이외의 파일은 미실행
                         # impdb 명령이 없어 불가
                         for f in $(ls /docker-entrypoint-initdb.d/*); do
@@ -353,6 +353,8 @@ case "$1" in
                 # setUserPassword.sh : Dockerfile에서 정의한 호스트 서버에서 컨테이너로 옯긴 파일
                 echo "oracle user password settings ================================================================== $JDBC_USERNAME"
                 echo "oracle user password settings ================================================================== $JDBC_PASSWORD"
+                echo "oracle user password settings ================================================================== $JDBC_USERNAME1"
+                echo "oracle user password settings ================================================================== $JDBC_PASSWORD1"
                 /setUserPassword.sh $JDBC_USERNAME '$JDBC_PASSWORD'
                 /setUserPassword.sh $JDBC_USERNAME1 '$JDBC_PASSWORD1'
 
@@ -361,6 +363,9 @@ case "$1" in
                 ##
                 ## Workaround for graceful shutdown. ....ing oracle... ‿( ́ ̵ _-`)‿
                 ##
+                ## trap : 쉘에서 발행하는 시그널을 처리하는 로직 수행
+                ## INT : Del 키를 눌렀을 때 발생하는 시그널
+                ## TERM : 프로세스 종료 시그널
                 while [ "$END" == '' ]; do
                         sleep 1
                         trap "/etc/init.d/oracle-xe stop && END=1" INT TERM
@@ -376,3 +381,36 @@ esac
 
 `entrypoint.sh` 에서 사용하기 위해 컨테이너로 이동한 파일을 확인해보자
 ##### [setPassword.sh]
+첫 번쨰 인자로 받은 값을 Oracle `SYS`, `SYSTEM` 계정의 패스워드를 변경하는 쉘 스크립트이다.   
+`Dockerfile`에서 Oracle 컨테이너 내부로 복사하고 `entrypoint.sh` 내부에서 실행됨으로써 Oracle 인스턴스 초기화와 함께    
+패스워드가 초기화된다.
+```sh
+#!/bin/bash
+
+ORACLE_PWD=$1
+
+su -p oracle -c "$ORACLE_HOME/bin/sqlplus -S / as sysdba << EOF
+      ALTER USER SYS IDENTIFIED BY \"$ORACLE_PWD\";
+      ALTER USER SYSTEM IDENTIFIED BY \"$ORACLE_PWD\";
+      exit;
+EOF"
+```
+
+##### [setUserPassword.sh]
+인자 두 개(ID, PW)를 받아 어플리케이션 DB 스키마의 패스워드를 변경하는 쉘 스크립트이다.   
+`Dockerfile`에서 Oracle 컨테이너 내부로 복사하고 `entrypoint.sh` 내부에서 실행됨으로써 Oracle 인스턴스 초기화와 함께    
+사전 생성된 어플리케이션 스키마의 패스워드가 변경된다.
+```sh
+#!/bin/bash
+
+ORACLE_ID=$1
+ORACLE_PWD=$2
+
+su -p oracle -c "$ORACLE_HOME/bin/sqlplus -S / as sysdba << EOF
+      SELECT $ORACLE_PWD FROM DUAL;
+      ALTER USER $ORACLE_ID IDENTIFIED BY \"$ORACLE_PWD\";
+      exit;
+EOF"
+
+echo "ALTER USER $ORACLE_ID IDENTIFIED BY $ORACLE_PWD"
+```

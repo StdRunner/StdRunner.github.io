@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CI/CD 환경 구성(Docker Compose로 Jenkins 설치, 빌드 환경 구성)
+title: Docker Compose로 Jenkins 설치, 빌드 환경 구성
 date: 2022-12-26
 updated: 
 tags: [jenkins, docker]

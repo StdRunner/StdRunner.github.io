@@ -3,6 +3,8 @@ real-menus:
   menuname : react-js
 - title : Spring boot
   menuname : spring-boot
+- title : infra
+  menuname : infra
 - title : Node, React 시리즈 - 레딧 사이트 만들기(NextJS)
   menuname : clone-reddit
 - title : 알고리즘 문제 풀이
